@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=680, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<title>dz-11</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="black-screen"></div>
+			<nav class="navigation">
+				<div class="navigation-logo">
+					<img src="img/logo.svg" alt="logo-img" class="logo-img">
+				</div>
+				<ul class="navigation-bar">
+					<div class="navigation-bar__close">
+						<img src="img/cross.png" alt="cross-icon" width="35px">
+					</div>
+					<li class="navigation-bar__item">
+						<div class="navigation-bar__item_logo">
+							<img src="img/logo.svg" alt="logo-img" class="logo-img">
+						</div>
+					</li>
+					<li class="navigation-bar__item">
+						<a href="#" class="navigation-bar__item_section">
+							About
+						</a>
+					</li>
+					<li class="navigation-bar__item">
+						<a href="#" class="navigation-bar__item_section">
+							Products
+						</a>
+					</li>
+					<li class="navigation-bar__item">
+						<a href="#" class="navigation-bar__item_section">
+							Pricing
+						</a>
+					</li>
+					<li class="navigation-bar__item">
+						<a href="#" class="navigation-bar__item_section">
+							Blog
+						</a>
+					</li>
+					<li class="navigation-bar__item">
+						<a href="#" class="navigation-bar__item_section">
+							Jobs
+						</a>
+					</li>
+					<li class="navigation-bar__item">
+						<a href="#" class="navigation-bar__item_section">
+							More
+							<img src="img/section-icon.svg" alt="section-icon" class="section-icon">
+						</a>
+						<ul class="section-more">
+							<li class="section-more__item"><a href="#">Link</a></li>
+							<li class="section-more__item"><a href="#">Link</a></li>
+							<li class="section-more__item"><a href="#">Link</a></li>
+						</ul>
+					</li>
+				</ul>
+				<aside class="navigation-link">
+					<a href="#" class="navigation-link__buttonLeft">
+						<img src="img/googlePlay-badge.svg" alt="" class="buttonLeft-badge">
+					</a>
+					<a href="#" class="navigation-link__buttonRight">
+						<img src="img/appStore-badge.svg" alt="" class="buttonRight-badge">
+					</a>
+				</aside>
+				<div class="navigation-menu">
+					<img src="img/pullOut-menuIcon.png" alt="asideMenu-icon" class="navigation-menu__icon">
+				</div>		
+			</nav>
+		</div>
+	</header>
+	<hr>
+	<section>
+		<div class="container">
+			<div class="main-content clearfix">
+				<div class="main-content__blockLeft">
+					<h1 class="main-content__blockLeft_title">Landing page UI kit</h1>
+					<p class="main-content__blockLeft_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio in et, lectus sit lorem id integer.</p>
+					<button class="main-content__blockLeft_button">Get Started</button>
+				</div>
+				<div class="main-content__blockRight">
+					<div class="main-content__blockRight_backLayer">
+					</div>
+					<img src="img/Img-Card1.svg" alt="Img-Card1" class="main-content__blockRight_frontCardOne">
+					<img src="img/Img-Card2.svg" alt="Img-Card2" class="main-content__blockRight_frontCardTwo">
+				</div>	
+			</div>
+		</div>
+	</section>
+</body>
+<script>
+	var but = document.querySelector(".navigation-menu");
+	but.onclick = function () {
+		var bik = document.querySelector(".navigation-bar");
+		bik.classList.add("show-bar");
+		var bik = document.querySelector(".black-screen");
+		bik.classList.add("show-screen");
+	}
+	var butn = document.querySelector(".navigation-bar__close");
+	butn.onclick = function () {
+		var bom = document.querySelector(".navigation-bar");
+		if( bom.classList.contains('show-bar')) {
+		var biks = document.querySelector(".show-bar");
+		biks.classList.remove("show-bar");
+		var bika = document.querySelector(".show-screen");
+		bika.classList.remove("show-screen");
+		}
+	}
+</script>
+</html>
