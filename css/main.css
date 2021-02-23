@@ -92,6 +92,9 @@ section {
       line-height: 20px;
       outline: none;
       transition: 0.2s; }
+      .card-usePanel__button:hover {
+        background: #b579f9;
+        transition: 0.2s; }
       .card-usePanel__button:focus {
         background: #660acf;
         transition: 0.2s; }

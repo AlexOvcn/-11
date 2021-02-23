@@ -101,6 +101,10 @@ section {
 			line-height: 20px;
 			outline: none;
 			transition: 0.2s;
+			&:hover {
+				background: lighten(#8C30F5, 15%);
+				transition: 0.2s;
+			}
 			&:focus {
 				background: darken(#8C30F5, 15%);
 				transition: 0.2s;
