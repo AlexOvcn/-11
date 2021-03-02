@@ -1,0 +1,288 @@
+.clearfix::before, .clearfix::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+* {
+  box-sizing: border-box; }
+
+h1, h2, h3, h4, h5, p, a, button, input, span {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  -webkit-user-select: none;
+          user-select: none; }
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex; }
+
+.leftSection {
+  background: url(../img/backgroundLeftSection.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 46.2%;
+  padding: 64px 0 0 0; }
+  .leftSection-logoIcon {
+    margin-left: 82px; }
+  .leftSection-figureTop {
+    float: right;
+    margin-top: 148px;
+    margin-right: 27%; }
+  .leftSection-figureBottom {
+    margin-top: 224px; }
+  .leftSection-quoteBlock {
+    margin-top: 236px;
+    margin-left: 82px;
+    margin-right: 80px;
+    max-width: 473px;
+    color: white; }
+    .leftSection-quoteBlock__mainText {
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 38px;
+      margin-top: 20px; }
+    .leftSection-quoteBlock__author {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 21.78px;
+      margin-top: 20px;
+      display: inline-block;
+      padding-right: 9px; }
+    .leftSection-quoteBlock__figure {
+      float: right;
+      margin-top: 79px;
+      margin-right: 37.5px; }
+
+.rightSection {
+  min-width: 774.7px;
+  padding-top: 74px; }
+  .rightSection-topPanel {
+    margin-left: 53px;
+    margin-right: 91px; }
+    .topPanel-leftButton {
+      text-decoration: none;
+      transition: .3s;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      display: inline-block; }
+      .topPanel-leftButton:hover {
+        transform: scale(1.1, 1.1);
+        filter: drop-shadow(4px 4px 1px rgba(0, 0, 0, 0.1));
+        transition: .3s; }
+      .topPanel-leftButton .topPanel-leftButton__icon {
+        vertical-align: middle; }
+      .topPanel-leftButton__text {
+        vertical-align: middle;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19.36px;
+        color: #8692A6; }
+    .topPanel-sideInfo {
+      float: right; }
+      .topPanel-sideInfo__step {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16.94px;
+        color: #BDBDBD; }
+        .topPanel-sideInfo__step > span {
+          text-transform: uppercase; }
+      .topPanel-sideInfo__title {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19.36px;
+        color: #8692A6; }
+  .rightSection-formBlock {
+    width: 426px;
+    margin-top: 78px;
+    margin-left: 126px; }
+    .rightSection-formBlock__title {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 36.31px;
+      margin-bottom: 10px; }
+    .rightSection-formBlock__subtitle {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+      color: #8692A6; }
+    .formInFormBlock {
+      position: relative; }
+      .formInFormBlock-separation {
+        border: 0;
+        height: 1px;
+        background: #F5F5F5; }
+        .formInFormBlock-separation:first-child {
+          margin-top: 16px;
+          margin-bottom: 24px; }
+        .formInFormBlock-separation:nth-child(8) {
+          margin-top: 33px;
+          margin-bottom: 32px; }
+      .formInFormBlock-inputWindow {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19.36px;
+        color: #696F79;
+        position: relative; }
+        .formInFormBlock-inputWindow__input {
+          display: block;
+          width: 100%;
+          height: 64px;
+          border: 1px solid #8692A6;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 16.94px;
+          color: #494949;
+          border-radius: 6px;
+          padding: 23px 100px 23px 30px;
+          outline: none;
+          margin-bottom: 24px;
+          transition: 0.2s; }
+          .formInFormBlock-inputWindow__input::placeholder {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16.94px;
+            color: #8692A6; }
+          .formInFormBlock-inputWindow__input:focus {
+            box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.11);
+            transition: 0.3s;
+            border: 1px solid #1565D8; }
+          .valid {
+            border: 1px solid green; }
+          .invalid {
+            border: 1px solid red; }
+        .formInFormBlock-inputWindow__inputTitle {
+          display: block;
+          margin-bottom: 14px; }
+        .formInFormBlock-inputWindow__showPassword {
+          outline: none;
+          position: absolute;
+          top: 54.5px;
+          left: 325px;
+          font-size: 12px;
+          font-weight: 400;
+          color: black;
+          width: 100px;
+          text-align: center;
+          transition: 0.2s; }
+          .formInFormBlock-inputWindow__showPassword:hover {
+            filter: drop-shadow(0 0 5px #000000);
+            transition: 0.2s; }
+      .formInFormBlock-checkboxWindow {
+        outline: none; }
+        .formInFormBlock-checkboxWindow__description {
+          position: relative;
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 14px;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 19.36px;
+          color: #696F79;
+          margin-bottom: 39px; }
+          .formInFormBlock-checkboxWindow__description::before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            right: 14px;
+            width: 17px;
+            height: 17px;
+            background: white;
+            border: 1px solid #1565D8;
+            border-radius: 3px;
+            vertical-align: bottom;
+            background-image: url(../img/checkMark.svg);
+            background-repeat: no-repeat;
+            background-size: 70%;
+            background-position: 50% 50%; }
+        .formInFormBlock-checkboxWindow:focus > .formInFormBlock-checkboxWindow__description::before {
+          box-shadow: 0 0 1px 2px #E5E5E5;
+          transition: 0.2s; }
+        .formInFormBlock-checkboxWindow:not(:focus) > .formInFormBlock-checkboxWindow__description::before {
+          transition: 1s; }
+        .formInFormBlock-checkboxWindow__checkbox {
+          display: none; }
+          .formInFormBlock-checkboxWindow__checkbox:checked + .formInFormBlock-checkboxWindow__description::before {
+            background-color: #1565D8;
+            animation: check .4s ease-out;
+            animation-fill-mode: forwards; }
+
+@keyframes check {
+  from {
+    background-size: 5%;
+    transform: scale(0.8, 0.8);
+    opacity: .4; }
+  50% {
+    opacity: .7;
+    transform: scale(1, 1);
+    background-size: 70%; }
+  to {
+    opacity: 1; } }
+      .button {
+        width: 100%;
+        height: 64px;
+        border-radius: 6px;
+        border: 0;
+        transition: 0.2s;
+        outline: none; }
+        .button:active {
+          box-shadow: 0 0 7px 2px #858585;
+          transition: 0.2s; }
+      .formInFormBlock-oneButton {
+        background: #1565D8;
+        color: white;
+        transition: 0.2s;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19.36px; }
+        .formInFormBlock-oneButton:hover {
+          background: #104faa;
+          transform: scale(1.03, 1.03);
+          transition: 0.3s; }
+      .formInFormBlock-twoButton {
+        position: relative;
+        background: #fff;
+        transition: 0.2s;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19.36px; }
+        .formInFormBlock-twoButton:hover {
+          background: #e6e5e5;
+          transform: scale(1.03, 1.03);
+          transition: 0.3s; }
+        .formInFormBlock-twoButton__googleLogo {
+          position: absolute;
+          left: 43px;
+          top: 30%; }
+      .formInFormBlock-preposition {
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.52px;
+        text-align: center;
+        color: #bababa;
+        width: 80px;
+        margin-left: -40px;
+        background: white;
+        position: absolute;
+        left: 50%;
+        margin-top: 25px; }
+
+@media screen and (max-width: 1180px) {
+  .container {
+    flex: none; }
+    .container .leftSection {
+      display: none; }
+    .container .rightSection {
+      min-width: 400px;
+      padding-top: 5vw;
+      width: 100%; }
+      .container .rightSection-topPanel {
+        width: 85%;
+        margin: 0 auto; }
+      .container .rightSection-formBlock {
+        margin: 10vw auto; } }
+
+@-moz-document url-prefix() {
+  .formInFormBlock-inputWindow__showPassword {
+    top: 69px; } }

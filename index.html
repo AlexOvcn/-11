@@ -2,14 +2,101 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>main</title>
-	<link rel="stylesheet" href="css/main.css">
+	<meta name="viewport" content="width=550, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<title>dz-13</title>
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<section>
-		
+		<div class="container">
+			<div class="leftSection">
+				<img src="img/logoIcon.svg" alt="logoIcon" class="leftSection-logoIcon">
+				<img src="img/logoText.svg" alt="logoText" class="leftSection-logoText">
+				<img src="img/figureTop.svg" alt="figureTop" class="leftSection-figureTop">
+				<div class="leftSection-quoteBlock clearfix">
+					<img src="img/quoteIcon.svg" alt="quoteIcon" class="leftSection-quoteBlock__quoteIcon">
+					<p class="leftSection-quoteBlock__mainText">The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.</p>
+					<p class="leftSection-quoteBlock__author">Vincent Obi</p>
+					<img src="img/circle-check.svg" alt="circle-check" class="leftSection-quoteBlock__circleCheck">
+					<img src="img/figure.svg" alt="figure" class="leftSection-quoteBlock__figure">
+				</div>
+				<img src="img/figureBottom.svg" alt="figureBottom" class="leftSection-figureBottom">
+			</div>
+			<div class="rightSection">
+				<div class="rightSection-topPanel clearfix">
+					<a class="topPanel-leftButton" href="#">
+						<img src="img/arrowBack.svg" alt="arrowBack" class="topPanel-leftButton__icon">
+						<span class="topPanel-leftButton__text">Back</span>
+					</a>
+					<div class="topPanel-sideInfo">
+						<p class="topPanel-sideInfo__step"><span>step</span> 01/03</p>
+						<p class="topPanel-sideInfo__title">Personal Info.</p>
+					</div>
+				</div>
+				<div class="rightSection-formBlock">
+					<h3 class="rightSection-formBlock__title">Register Individual Account!</h3>
+					<p class="rightSection-formBlock__subtitle">For the purpose of industry regulation, your details are required.</p>
+					<form action="index.html" class="formInFormBlock">
+						<hr class="formInFormBlock-separation">
+						<label class="formInFormBlock-inputWindow">
+							<span class="formInFormBlock-inputWindow__inputTitle">Your fullname*</span>
+							<input type="text" class="formInFormBlock-inputWindow__input" placeholder="Enter fullname" tabindex="1" onblur="validateInput(this)" minlength="3" required="" pattern="[^0-9]+$" name="fullname">
+						</label>
+						<label class="formInFormBlock-inputWindow">
+							<span class="formInFormBlock-inputWindow__inputTitle">Email address*</span>
+							<input type="email" class="formInFormBlock-inputWindow__input" placeholder="Enter email address" tabindex="2" onblur="validateInput(this)" required="" name="email">
+						</label>
+						<label class="formInFormBlock-inputWindow">
+							<span class="formInFormBlock-inputWindow__inputTitle">Create password*</span>
+							<input type="password" class="formInFormBlock-inputWindow__input" placeholder="Enter password" tabindex="3" onblur="validateInput(this)" id="showPassword" required="" minlength="6" name="password">
+							<p class="formInFormBlock-inputWindow__showPassword" id="showButton">Show</p>
+						</label>
+						<label class="formInFormBlock-checkboxWindow" tabindex="4">
+							<input type="checkbox" class="formInFormBlock-checkboxWindow__checkbox" name="toAgree" value="check">
+							<span class="formInFormBlock-checkboxWindow__description">I agree to terms & conditions</span>
+						</label>
+						<button class="formInFormBlock-oneButton button">Register Account</button>
+						<p class="formInFormBlock-preposition">Or</p>
+						<hr class="formInFormBlock-separation">
+						<button class="formInFormBlock-twoButton button"><img src="img/googleLogo.svg" alt="googleLogo" class="formInFormBlock-twoButton__googleLogo">Register with Google</button>
+					</form>
+				</div>
+			</div>
+		</div>
 	</section>
 </body>
+<script>
+	function validateInput(input) {
+	   	if (input.validity.valid) {
+	   		input.classList.add("valid");
+	   		input.classList.remove("invalid");
+		} else {
+				input.classList.add("invalid");
+				input.classList.remove("valid");
+		}
+		if (input.value.length < 1) {
+		  input.classList.remove("invalid");
+		  input.classList.remove("valid");
+	   }
+	}
+	var showOrNot = document.getElementById('showButton');
+	var counter = 0;
+    showOrNot.onclick = function() {
+        actions[counter = (counter % 2) + 1]();
+    };
+	var actions = {
+        1: function() {
+        	var input = document.getElementById("showPassword");
+			input.setAttribute('type', 'text');
+			showOrNot.innerHTML="Don't show";
+        },
+        2: function() {
+         	var input = document.getElementById("showPassword");
+			input.setAttribute('type', 'password');
+			showOrNot.innerHTML="Show";
+        }
+    };
+</script>
 </html>
