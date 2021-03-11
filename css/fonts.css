@@ -1,7 +1,28 @@
 @font-face {
-    font-family: 'Manrope';
-    src: local('Manrope  Regular'), local('Manrope--Regular'),
-        url('../fonts/Manrope-Regular.woff2') format('woff2');
+    font-family: 'GothamPro';
+    src: local('GothamPro Light'), local('GothamPro-Light'),
+        url('../fonts/GothamPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GothamPro';
+    src: local('GothamPro Regular'), local('GothamPro-Regular'),
+        url('../fonts/GothamPro-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
-  }
+}
+@font-face {
+    font-family: 'GothamPro';
+    src: local('GothamPro Medium'), local('GothamPro-Medium'),
+        url('../fonts/GothamPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GothamPro';
+    src: local('GothamPro Bold'), local('GothamPro-Bold'),
+        url('../fonts/GothamPro-Bold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}

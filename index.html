@@ -2,14 +2,365 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>main</title>
-	<link rel="stylesheet" href="css/main.css">
+	<meta name="viewport" content="width=590, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+	<title>dz-13</title>
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<header>
+		<div class="container-header">
+			<div class="logoBody">
+				<img src="./icon/logo.svg" alt="Logo" class="logoBody-icon">
+			</div>
+			<nav class="navigation">
+				<a href="#" class="navigation-link">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="navigation-link__icon" stroke="#143">
+						<path d="M4 11C6.38695 11 8.67613 11.9482 10.364 13.636C12.0518 15.3239 13 17.6131 13 20" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M4 4C8.24346 4 12.3131 5.68571 15.3137 8.68629C18.3143 11.6869 20 15.7565 20 20" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M5 20C5.55228 20 6 19.5523 6 19C6 18.4477 5.55228 18 5 18C4.44772 18 4 18.4477 4 19C4 19.5523 4.44772 20 5 20Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>						
+					<p class="navigation-link__text">feed</p>
+					<div class="navigation-link__stripe"></div>
+				</a>
+				<a href="#" class="navigation-link">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="navigation-link__icon">
+						<path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M16 3.13C16.8604 3.3503 17.623 3.8507 18.1676 4.55231C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89317 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					<p class="navigation-link__text">Network</p>
+					<div class="navigation-link__stripe"></div>
+				</a>
+				<a href="#" class="navigation-link">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="navigation-link__icon">
+						<path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M16 21V5C16 4.46957 15.7893 3.96086 15.4142 3.58579C15.0391 3.21071 14.5304 3 14 3H10C9.46957 3 8.96086 3.21071 8.58579 3.58579C8.21071 3.96086 8 4.46957 8 5V21" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					<p class="navigation-link__text">jobs</p>
+					<div class="navigation-link__stripe"></div>
+				</a>
+				<a href="#" class="navigation-link">
+					<img src="./icon/count.svg" alt="count" class="navigation-link__count">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="navigation-link__icon">
+						<path d="M21 15C21 15.5304 20.7893 16.0391 20.4142 16.4142C20.0391 16.7893 19.5304 17 19 17H7L3 21V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V15Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					<p class="navigation-link__text">chat</p>
+					<div class="navigation-link__stripe"></div>
+				</a>
+				<a href="#" class="navigation-link">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="navigation-link__icon">
+						<path d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					<p class="navigation-link__text">notices</p>
+					<div class="navigation-link__stripe"></div>
+				</a>
+			</nav>
+			<label class="searchField">					
+				<input type="text" class="searchField-input" placeholder="Search">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="searchField-icon">
+					<path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M20.9999 21L16.6499 16.65" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+			</label>
+			<div class="accountInfo">
+				<div class="accountInfo-photoBody">
+					<img src="./img/accountInfo-photo.png" alt="accountInfo-photo" class="accountInfo-photoBody__photo">
+				</div>
+				<div class="accountInfo-main">
+					<p class="accountInfo-main__text">D. Kargaev</p>
+					<p class="accountInfo-main__text">You</p>
+					<p class="accountInfo-main__text">367 views today</p>
+					<p class="accountInfo-main__text">+32</p>
+					<img src="./icon/arrow-up-right.svg" alt="arrow-up-right.svg" class="accountInfo-main__icon">
+				</div>
+			</div>
+			<div class="other">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="other-icon">
+					<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12C18 12.5523 18.4477 13 19 13Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>					
+				<p class="other-text">other</p>
+			</div>
+			<div class="menu">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="menu-icon">
+					<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12C18 12.5523 18.4477 13 19 13Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					<path d="M5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>					
+				<p class="menu-text">menu</p>
+			</div>
+		</div>
+	</header>
 	<section>
-		
+		<div class="container-section">
+			<div class="blockLeft">
+				<nav class="navigationTwo">
+					<a href="#" class="navigationTwo-link">
+						<div class="navigationTwo-link__stripe"></div>
+						<svg width="17" height="17" viewBox="0 0 17 17" fill="none" class="navigationTwo-link__icon">
+							<g clip-path="url(#clip0)">
+							<path d="M6.9978 9.03973C7.2841 9.42248 7.64937 9.73918 8.06884 9.96835C8.4883 10.1975 8.95214 10.3338 9.4289 10.3679C9.90567 10.4021 10.3842 10.3333 10.832 10.1662C11.2799 9.99919 11.6865 9.73777 12.0245 9.39973L14.0245 7.39973C14.6317 6.77105 14.9676 5.92904 14.9601 5.05506C14.9525 4.18107 14.6019 3.34502 13.9839 2.727C13.3658 2.10897 12.5298 1.75841 11.6558 1.75081C10.7818 1.74322 9.93981 2.0792 9.31114 2.68639L8.16447 3.82639" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M9.66428 7.70631C9.37797 7.32355 9.0127 7.00685 8.59324 6.77768C8.17378 6.54851 7.70994 6.41223 7.23318 6.37808C6.75641 6.34394 6.27789 6.41273 5.83005 6.57979C5.38221 6.74684 4.97553 7.00826 4.63761 7.34631L2.63761 9.34631C2.03042 9.97498 1.69444 10.817 1.70203 11.691C1.70963 12.565 2.06019 13.401 2.67822 14.019C3.29624 14.6371 4.13228 14.9876 5.00627 14.9952C5.88026 15.0028 6.72227 14.6668 7.35094 14.0596L8.49094 12.9196" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</g>
+							<defs>
+							<clipPath id="clip0">
+							<rect width="16" height="16" fill="white" transform="translate(0.331055 0.373047)"/>
+							</clipPath>
+							</defs>
+						</svg>							
+						<p class="navigationTwo-link__title">Connections</p>
+						<p class="navigationTwo-link__score">1,038</p>
+					</a>
+					<a href="#" class="navigationTwo-link clearfix">
+						<div class="navigationTwo-link__stripe"></div>
+						<svg width="17" height="16" viewBox="0 0 17 16" fill="none" class="navigationTwo-link__icon">
+							<g clip-path="url(#clip0)">
+							<path d="M8.64347 14.6667C12.3254 14.6667 15.3101 11.6819 15.3101 8C15.3101 4.3181 12.3254 1.33333 8.64347 1.33333C4.96158 1.33333 1.97681 4.3181 1.97681 8C1.97681 11.6819 4.96158 14.6667 8.64347 14.6667Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M8.64355 10C9.74812 10 10.6436 9.10457 10.6436 8C10.6436 6.89543 9.74812 6 8.64355 6C7.53899 6 6.64355 6.89543 6.64355 8C6.64355 9.10457 7.53899 10 8.64355 10Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</g>
+							<defs>
+							<clipPath id="clip0">
+							<rect width="16" height="16" fill="white" transform="translate(0.643555)"/>
+							</clipPath>
+							</defs>
+						</svg>							
+						<p class="navigationTwo-link__title">Invitations</p>
+						<img src="./icon/notificationIcon.svg" alt="notificationIcon" class="navigationTwo-link__notification">
+						<p class="navigationTwo-link__score">2</p>
+					</a>
+					<a href="#" class="navigationTwo-link">
+						<div class="navigationTwo-link__stripe"></div>
+						<svg width="17" height="16" viewBox="0 0 17 16" fill="none" class="navigationTwo-link__icon">
+							<g clip-path="url(#clip0)">
+							<path d="M14.8896 5.33333V14H2.88965V5.33333" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M16.2231 2H1.5564V5.33333H16.2231V2Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M7.5564 8H10.2231" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</g>
+							<defs>
+							<clipPath id="clip0">
+							<rect width="16" height="16" fill="white" transform="translate(0.889648)"/>
+							</clipPath>
+							</defs>
+						</svg>
+						<p class="navigationTwo-link__title">Teammates</p>
+						<p class="navigationTwo-link__score"></p>
+					</a>
+					<a href="#" class="navigationTwo-link">
+						<div class="navigationTwo-link__stripe"></div>
+						<svg width="16" height="17" viewBox="0 0 16 17" fill="none" class="navigationTwo-link__icon">
+							<g clip-path="url(#clip0)">
+							<path d="M11.3334 14.2686V12.9352C11.3334 12.228 11.0525 11.5497 10.5524 11.0496C10.0523 10.5495 9.37399 10.2686 8.66675 10.2686H3.33341C2.62617 10.2686 1.94789 10.5495 1.4478 11.0496C0.9477 11.5497 0.666748 12.228 0.666748 12.9352V14.2686" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M5.99992 7.60189C7.47268 7.60189 8.66659 6.40798 8.66659 4.93522C8.66659 3.46246 7.47268 2.26855 5.99992 2.26855C4.52716 2.26855 3.33325 3.46246 3.33325 4.93522C3.33325 6.40798 4.52716 7.60189 5.99992 7.60189Z" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M15.3333 14.2686V12.9353C15.3328 12.3444 15.1362 11.7704 14.7742 11.3035C14.4122 10.8365 13.9053 10.503 13.3333 10.3553" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M10.6667 2.35526C11.2404 2.50212 11.7488 2.83572 12.1118 3.30346C12.4749 3.7712 12.672 4.34647 12.672 4.93859C12.672 5.5307 12.4749 6.10598 12.1118 6.57371C11.7488 7.04145 11.2404 7.37505 10.6667 7.52192" stroke="#181818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</g>
+							<defs>
+							<clipPath id="clip0">
+							<rect width="16" height="16" fill="white" transform="translate(0 0.268555)"/>
+							</clipPath>
+							</defs>
+						</svg>
+						<p class="navigationTwo-link__title">groups</p>
+						<p class="navigationTwo-link__score">6</p>
+					</a>
+					<a href="#" class="navigationTwo-link">
+						<div class="navigationTwo-link__stripe"></div>
+						<svg width="17" height="17" viewBox="0 0 17 17" fill="none" class="navigationTwo-link__icon">
+							<g clip-path="url(#clip0)">
+							<path d="M8.70988 1.78061L2.04321 5.11394L8.70988 8.44728L15.3765 5.11394L8.70988 1.78061Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M2.04321 11.7806L8.70988 15.1139L15.3765 11.7806" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M2.04321 8.44727L8.70988 11.7806L15.3765 8.44727" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</g>
+							<defs>
+							<clipPath id="clip0">
+							<rect width="16" height="16" fill="white" transform="translate(0.709961 0.447266)"/>
+							</clipPath>
+							</defs>
+						</svg>
+						<p class="navigationTwo-link__title">pages</p>
+						<p class="navigationTwo-link__score">28</p>
+					</a>
+					<a href="#" class="navigationTwo-link">
+						<div class="navigationTwo-link__stripe"></div>
+						<svg width="17" height="17" viewBox="0 0 17 17" fill="none" class="navigationTwo-link__icon">
+							<path d="M3.50854 6.75195H14.1752" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M3.50854 10.752H14.1752" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M7.50838 2.75195L6.17505 14.752" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M11.5084 2.75195L10.175 14.752" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<p class="navigationTwo-link__title">hashtags</p>
+						<p class="navigationTwo-link__score">8</p>
+					</a>
+				</nav>
+			</div>
+			<div class="blockRight">
+				<div class="buttonsSection">
+					<label class="buttonsSection-element">
+						<input type="radio" tabindex="1" name="button" class="buttonsSection-element__core" checked>
+						<span class="buttonsSection-element__button">received</span>
+					</label>
+					<label class="buttonsSection-element">
+						<input type="radio" tabindex="1" name="button" class="buttonsSection-element__core">
+						<span class="buttonsSection-element__button">sent</span>
+					</label>
+				</div>
+				<div class="separationBlock">
+					<p class="separationBlock-title">you have <span>2 new connections</span></p>
+					<hr class="separationBlock-element">	
+				</div>
+				<div class="longCard">
+					<div class="longCard-titleSection">
+						<img src="./img/photoWorker1.png" alt="photoWorker" class="longCard-titleSection__photo">
+						<div class="longCard-titleSection__description">
+							<p class="longCard-titleSection__description_name">Brandon Wilson</p>
+							<p class="longCard-titleSection__description_post">Senior UX designer</p>
+							<p class="longCard-titleSection__description_connections">623 connections</p>
+						</div>
+					</div>
+					<div class="longCard-appealSection">
+						<p class="longCard-appealSection__appeal">Hey, I saw your works. I like it! Can we do something together? Or maybe you have project for UX at the moment?</p>
+					</div>
+					<div class="longCard-buttonsSection">
+						<button class="longCard-buttonsSection__button">
+							accept
+						</button>
+						<button class="longCard-buttonsSection__button">
+							decline
+						</button>
+					</div>
+				</div>
+				<div class="longCard">
+					<div class="longCard-titleSection">
+						<img src="./img/photoWorker2.png" alt="photoWorker" class="longCard-titleSection__photo">
+						<div class="longCard-titleSection__description">
+							<p class="longCard-titleSection__description_name">Theresa Steward</p>
+							<p class="longCard-titleSection__description_post">iOS developer</p>
+							<p class="longCard-titleSection__description_connections">481 connections</p>
+						</div>
+					</div>
+					<div class="longCard-buttonsSection">
+						<button class="longCard-buttonsSection__button">
+							accept
+						</button>
+						<button class="longCard-buttonsSection__button">
+							decline
+						</button>
+					</div>
+				</div>
+				<div class="separationBlock">
+					<p class="separationBlock-title">recent connections</p>
+					<hr class="separationBlock-element">	
+				</div>
+				<div class="grid-block">
+					<div class="shortCard">
+						<img src="./img/photoWorker3.png" alt="photoWorker" class="shortCard-photo">
+						<div class="shortCard-titleSection">
+							<p class="shortCard-titleSection__name">Audrey Alexander</p>
+							<p class="shortCard-titleSection__post">Team lead at Google</p>
+						</div>
+						<p class="shortCard-timeMark">Yesterday, 14:30</p>
+					</div>
+					<div class="shortCard">
+						<img src="./img/photoWorker4.png" alt="photoWorker" class="shortCard-photo">
+						<div class="shortCard-titleSection">
+							<p class="shortCard-titleSection__name">Kyle Fisher</p>
+							<p class="shortCard-titleSection__post">Product designer at Commandor Corp</p>
+						</div>
+						<p class="shortCard-timeMark">Yesterday, 12:03</p>
+					</div>
+					<div class="shortCard">
+						<img src="./img/photoWorker5.png" alt="photoWorker" class="shortCard-photo">
+						<div class="shortCard-titleSection">
+							<p class="shortCard-titleSection__name">Darlene Black</p>
+							<p class="shortCard-titleSection__post">HR-manager, 10 000 connections</p>
+						</div>
+						<p class="shortCard-timeMark">26 aug, monday</p>
+					</div>
+					<div class="shortCard">
+						<img src="./img/photoWorker6.png" alt="photoWorker" class="shortCard-photo">
+						<div class="shortCard-titleSection">
+							<p class="shortCard-titleSection__name">Eduardo Russell</p>
+							<p class="shortCard-titleSection__post">Full stack developer at Yandex</p>
+						</div>
+						<p class="shortCard-timeMark">25 aug, sunday</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
+	<footer>
+		<div class="dimming-block"></div>
+		<div class="container-footer">
+			<img src="./icon/logoFooter.svg" alt="logoFooter" class="logoFooter">
+			<div class="navigationBlock">
+				<p class="navigationBlock-title">Navigation</p>
+				<div class="navigationBlock-sections">
+					<div class="navigationBlock-sections__section">
+						<a href="#" class="navigationBlock-sections__section_point">About</a>
+						<a href="#" class="navigationBlock-sections__section_point">Careers</a>
+						<a href="#" class="navigationBlock-sections__section_point">Advertising</a>
+						<a href="#" class="navigationBlock-sections__section_point">Small Business</a>
+					</div>
+					<div class="navigationBlock-sections__section">
+						<a href="#" class="navigationBlock-sections__section_point">Talent Solutions</a>
+						<a href="#" class="navigationBlock-sections__section_point">Marketing Solutions</a>
+						<a href="#" class="navigationBlock-sections__section_point">Sales Solutions</a>
+						<a href="#" class="navigationBlock-sections__section_point">Safery Center</a>
+					</div>
+					<div class="navigationBlock-sections__section">
+						<a href="#" class="navigationBlock-sections__section_point">Community Guidelines</a>
+						<a href="#" class="navigationBlock-sections__section_point">Privacy & Terms</a>
+						<a href="#" class="navigationBlock-sections__section_point">Mobile App</a>
+					</div>
+				</div>
+			</div>
+			<div class="fastAccessBlock">
+				<p class="fastAccessBlock-title">Fast access</p>
+				<div class="fastAccessBlock-buttons">
+					<button class="fastAccessBlock-buttons__button">
+						Questions?
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="fastAccessBlock-buttons__button_icon">
+							<path d="M8.00016 14.6666C11.6821 14.6666 14.6668 11.6819 14.6668 7.99998C14.6668 4.31808 11.6821 1.33331 8.00016 1.33331C4.31826 1.33331 1.3335 4.31808 1.3335 7.99998C1.3335 11.6819 4.31826 14.6666 8.00016 14.6666Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M6.06006 5.99995C6.21679 5.5544 6.52616 5.17869 6.93336 4.93937C7.34056 4.70006 7.81932 4.61258 8.28484 4.69243C8.75036 4.77228 9.1726 5.0143 9.47678 5.37564C9.78095 5.73697 9.94743 6.1943 9.94672 6.66662C9.94672 7.99995 7.94672 8.66662 7.94672 8.66662" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M8 11.3333H8.00667" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</button>
+					<button class="fastAccessBlock-buttons__button">
+						settings
+						<svg width="17" height="17" viewBox="0 0 17 17" fill="none" class="fastAccessBlock-buttons__button_icon">
+							<g clip-path="url(#clip0)">
+							<path d="M8.57861 10.1519C9.68318 10.1519 10.5786 9.25643 10.5786 8.15186C10.5786 7.04729 9.68318 6.15186 8.57861 6.15186C7.47404 6.15186 6.57861 7.04729 6.57861 8.15186C6.57861 9.25643 7.47404 10.1519 8.57861 10.1519Z" stroke="#0275B1" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M13.5118 10.1519C13.423 10.353 13.3966 10.576 13.4358 10.7923C13.475 11.0085 13.5781 11.2081 13.7318 11.3652L13.7718 11.4052C13.8958 11.529 13.9941 11.6761 14.0612 11.838C14.1283 11.9998 14.1628 12.1733 14.1628 12.3485C14.1628 12.5238 14.1283 12.6973 14.0612 12.8591C13.9941 13.021 13.8958 13.168 13.7718 13.2919C13.648 13.4158 13.5009 13.5142 13.339 13.5813C13.1772 13.6484 13.0037 13.6829 12.8284 13.6829C12.6532 13.6829 12.4797 13.6484 12.3179 13.5813C12.156 13.5142 12.0089 13.4158 11.8851 13.2919L11.8451 13.2519C11.688 13.0982 11.4884 12.9951 11.2722 12.9559C11.0559 12.9167 10.8329 12.9431 10.6318 13.0319C10.4346 13.1164 10.2664 13.2567 10.148 13.4356C10.0295 13.6144 9.96597 13.824 9.96512 14.0385V14.1519C9.96512 14.5055 9.82464 14.8446 9.57459 15.0947C9.32454 15.3447 8.98541 15.4852 8.63178 15.4852C8.27816 15.4852 7.93902 15.3447 7.68897 15.0947C7.43893 14.8446 7.29845 14.5055 7.29845 14.1519V14.0919C7.29329 13.8712 7.22186 13.6572 7.09346 13.4777C6.96505 13.2981 6.78561 13.1614 6.57845 13.0852C6.37737 12.9965 6.15432 12.97 5.93806 13.0092C5.72179 13.0484 5.52224 13.1515 5.36512 13.3052L5.32512 13.3452C5.20129 13.4692 5.05423 13.5675 4.89237 13.6346C4.73051 13.7017 4.557 13.7363 4.38178 13.7363C4.20656 13.7363 4.03306 13.7017 3.8712 13.6346C3.70933 13.5675 3.56228 13.4692 3.43845 13.3452C3.31448 13.2214 3.21614 13.0743 3.14904 12.9125C3.08194 12.7506 3.0474 12.5771 3.0474 12.4019C3.0474 12.2267 3.08194 12.0532 3.14904 11.8913C3.21614 11.7294 3.31448 11.5824 3.43845 11.4585L3.47845 11.4185C3.63214 11.2614 3.73524 11.0619 3.77445 10.8456C3.81367 10.6293 3.78719 10.4063 3.69845 10.2052C3.61394 10.008 3.47362 9.83986 3.29476 9.72141C3.1159 9.60296 2.90631 9.5394 2.69178 9.53854H2.57845C2.22483 9.53854 1.88569 9.39807 1.63564 9.14802C1.38559 8.89797 1.24512 8.55883 1.24512 8.20521C1.24512 7.85159 1.38559 7.51245 1.63564 7.2624C1.88569 7.01235 2.22483 6.87188 2.57845 6.87188H2.63845C2.85911 6.86671 3.07312 6.79529 3.25265 6.66688C3.43218 6.53848 3.56893 6.35903 3.64512 6.15188C3.73386 5.9508 3.76033 5.72775 3.72112 5.51148C3.68191 5.29522 3.57881 5.09566 3.42512 4.93854L3.38512 4.89854C3.26115 4.77471 3.1628 4.62766 3.0957 4.4658C3.02861 4.30393 2.99407 4.13043 2.99407 3.95521C2.99407 3.77999 3.02861 3.60649 3.0957 3.44462C3.1628 3.28276 3.26115 3.13571 3.38512 3.01188C3.50895 2.88791 3.656 2.78956 3.81786 2.72246C3.97973 2.65536 4.15323 2.62083 4.32845 2.62083C4.50367 2.62083 4.67717 2.65536 4.83904 2.72246C5.0009 2.78956 5.14795 2.88791 5.27178 3.01188L5.31178 3.05188C5.4689 3.20557 5.66846 3.30867 5.88472 3.34788C6.10099 3.38709 6.32404 3.36062 6.52512 3.27188H6.57845C6.77563 3.18737 6.94379 3.04705 7.06225 2.86819C7.1807 2.68933 7.24426 2.47973 7.24512 2.26521V2.15188C7.24512 1.79825 7.38559 1.45912 7.63564 1.20907C7.88569 0.959018 8.22483 0.818542 8.57845 0.818542C8.93207 0.818542 9.27121 0.959018 9.52126 1.20907C9.77131 1.45912 9.91178 1.79825 9.91178 2.15188V2.21188C9.91264 2.4264 9.9762 2.63599 10.0947 2.81485C10.2131 2.99371 10.3813 3.13403 10.5784 3.21854C10.7795 3.30729 11.0026 3.33376 11.2188 3.29455C11.4351 3.25533 11.6347 3.15223 11.7918 2.99854L11.8318 2.95854C11.9556 2.83457 12.1027 2.73623 12.2645 2.66913C12.4264 2.60203 12.5999 2.56749 12.7751 2.56749C12.9503 2.56749 13.1238 2.60203 13.2857 2.66913C13.4476 2.73623 13.5946 2.83457 13.7184 2.95854C13.8424 3.08237 13.9408 3.22942 14.0079 3.39129C14.075 3.55315 14.1095 3.72665 14.1095 3.90188C14.1095 4.0771 14.075 4.2506 14.0079 4.41246C13.9408 4.57433 13.8424 4.72138 13.7184 4.84521L13.6784 4.88521C13.5248 5.04233 13.4217 5.24189 13.3824 5.45815C13.3432 5.67441 13.3697 5.89746 13.4584 6.09854V6.15188C13.543 6.34905 13.6833 6.51722 13.8621 6.63567C14.041 6.75412 14.2506 6.81769 14.4651 6.81854H14.5784C14.9321 6.81854 15.2712 6.95902 15.5213 7.20907C15.7713 7.45912 15.9118 7.79825 15.9118 8.15188C15.9118 8.5055 15.7713 8.84464 15.5213 9.09468C15.2712 9.34473 14.9321 9.48521 14.5784 9.48521H14.5184C14.3039 9.48606 14.0943 9.54963 13.9155 9.66808C13.7366 9.78653 13.5963 9.9547 13.5118 10.1519V10.1519Z" stroke="#0275B1" stroke-linecap="round" stroke-linejoin="round"/>
+							</g>
+							<defs>
+							<clipPath id="clip0">
+							<rect width="16" height="16" fill="white" transform="translate(0.578613 0.151855)"/>
+							</clipPath>
+							</defs>
+						</svg>
+					</button>
+				</div>
+			</div>
+			<div class="languageBlock">
+				<p class="languageBlock-title">Language</p>
+				<div class="languageBlock-inputBody">
+					<input type="text" class="languageBlock-inputBody__input" list="language" placeholder="Select language">
+					<datalist id="language">
+						<option value="English"/>
+						<option value="Russian"/>
+					</datalist>
+					<img src="./icon/chevron-down.svg" alt="chevron-down" class="languageBlock-inputBody__icon">
+				</div>
+			</div>
+		</div>
+	</footer>
 </body>
+<script>
+	
+</script>
 </html>
