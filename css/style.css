@@ -549,16 +549,16 @@ label {
   cursor: pointer;
 }
 
-svg {
-  fill: #313133;
-}
-
 body {
   background: #f9fdff;
 }
 
 header {
   overflow-y: hidden;
+}
+
+body > svg {
+  display: none;
 }
 
 .sliderOne-item,
@@ -692,10 +692,11 @@ header {
   display: flex;
   margin-right: 22px;
   overflow: hidden;
+  fill: #313133;
 }
 
 .navigation-rightSection__search:hover .navigation-rightSection__search_icon {
-  fill: #ff897b;
+  fill: #ff897b !important;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
@@ -790,6 +791,7 @@ input::-webkit-search-results-decoration {
   position: relative;
   width: 33px;
   display: inline-block;
+  fill: #313133;
 }
 
 .navigation-rightSection__shoppingСart:hover .navigation-rightSection__shoppingСart_notification {
