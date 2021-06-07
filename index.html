@@ -1,15 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>main</title>
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/fonts.css">
-</head>
-<body>
-	<section>
-		
-	</section>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=500, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>dz-26</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<h1 class="theHint">Чтобы добавить новую карточку, дважды нажмите на пустую ячейку</h1>
+		<div class="changeCards">
+			<h2 class="changeCards_text colorShadowTextGreen">Изменить карточку?</h2>
+		</div>
+		<div class="grid-container">
+			<div class="grid-container__item" id="itemGrid1">
+				<div class="grid-container__item_clickForChanges hidden"></div>
+				<div class="grid-container__item_grayScreen"></div>
+				<div class="grid-container__item_mainWindow">
+					<img class="grid-container__item_mainWindow--img" src="https://cdn4.iconfinder.com/data/icons/vegetables-60/48/Fruits_watermelon_food-128.png" alt="">
+					<h2 class="grid-container__item_mainWindow--description">Это арбузик</h2>
+				</div>
+				<div class="grid-container__item_addScreenSaver hidden"></div>
+				<div class="grid-container__item_windowAddingInfo hidden">
+					<div class="grid-container__item_windowAddingInfo--cross"></div>
+					<form action="" class="formInWindowAddingInfo">
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажие URL картинки-обложки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваш URL" required name="URL_input" autocomplete="off">
+						</label>
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажите описание карточки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваше описание" required name="description_input" autocomplete="off">
+						</label>
+						<button class="formInWindowAddingInfo-addButton" type="submit" name="buttonForAddChanges" disabled>Добавить карточку</button>
+					</form>
+				</div>
+			</div>
+			<div class="grid-container__item" id="itemGrid2">
+				<div class="grid-container__item_clickForChanges hidden"></div>
+				<div class="grid-container__item_grayScreen"></div>
+				<div class="grid-container__item_mainWindow">
+					<img class="grid-container__item_mainWindow--img" src="https://cdn4.iconfinder.com/data/icons/vegetables-60/48/Fruits_grapes_food-128.png" alt="">
+					<h2 class="grid-container__item_mainWindow--description">Это виноградик</h2>
+				</div>
+				<div class="grid-container__item_addScreenSaver hidden"></div>
+				<div class="grid-container__item_windowAddingInfo hidden">
+					<div class="grid-container__item_windowAddingInfo--cross"></div>
+					<form action="" class="formInWindowAddingInfo">
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажие URL картинки-обложки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваш URL" required name="URL_input" autocomplete="off">
+						</label>
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажите описание карточки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваше описание" required name="description_input" autocomplete="off">
+						</label>
+						<button class="formInWindowAddingInfo-addButton" type="submit" name="buttonForAddChanges" disabled>Добавить карточку</button>
+					</form>
+				</div>
+			</div>
+			<div class="grid-container__item" id="itemGrid3">
+				<div class="grid-container__item_clickForChanges hidden"></div>
+				<div class="grid-container__item_grayScreen"></div>
+				<div class="grid-container__item_mainWindow">
+					<img class="grid-container__item_mainWindow--img" src="https://cdn4.iconfinder.com/data/icons/vegetables-60/48/Fruits_cherry_food-128.png" alt="">
+					<h2 class="grid-container__item_mainWindow--description">Это вишенка</h2>
+				</div>
+				<div class="grid-container__item_addScreenSaver hidden"></div>
+				<div class="grid-container__item_windowAddingInfo hidden">
+					<div class="grid-container__item_windowAddingInfo--cross"></div>
+					<form action="" class="formInWindowAddingInfo">
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажие URL картинки-обложки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваш URL" required name="URL_input" autocomplete="off">
+						</label>
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажите описание карточки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваше описание" required name="description_input" autocomplete="off">
+						</label>
+						<button class="formInWindowAddingInfo-addButton" type="submit" name="buttonForAddChanges" disabled>Добавить карточку</button>
+					</form>
+				</div>
+			</div>
+			<div class="grid-container__item" id="itemGrid4">
+				<div class="grid-container__item_clickForChanges hidden"></div>
+				<div class="grid-container__item_grayScreen"></div>
+				<div class="grid-container__item_mainWindow">
+					<img class="grid-container__item_mainWindow--img" src="https://cdn4.iconfinder.com/data/icons/fruits-79/48/08-orange-128.png" alt="">
+					<h2 class="grid-container__item_mainWindow--description">Это апельсинчик</h2>
+				</div>
+				<div class="grid-container__item_addScreenSaver hidden"></div>
+				<div class="grid-container__item_windowAddingInfo hidden">
+					<div class="grid-container__item_windowAddingInfo--cross"></div>
+					<form action="" class="formInWindowAddingInfo">
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажие URL картинки-обложки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваш URL" required name="URL_input" autocomplete="off">
+						</label>
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажите описание карточки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваше описание" required name="description_input" autocomplete="off">
+						</label>
+						<button class="formInWindowAddingInfo-addButton" type="submit" name="buttonForAddChanges" disabled>Добавить карточку</button>
+					</form>
+				</div>
+			</div>
+			<div class="grid-container__item" id="itemGrid5">
+				<div class="grid-container__item_clickForChanges hidden"></div>
+				<div class="grid-container__item_grayScreen"></div>
+				<div class="grid-container__item_mainWindow">
+					<img class="grid-container__item_mainWindow--img" src="https://cdn4.iconfinder.com/data/icons/fruits-79/48/16-lemon-128.png" alt="">
+					<h2 class="grid-container__item_mainWindow--description">Это лимончик</h2>
+				</div>
+				<div class="grid-container__item_addScreenSaver hidden"></div>
+				<div class="grid-container__item_windowAddingInfo hidden">
+					<div class="grid-container__item_windowAddingInfo--cross"></div>
+					<form action="" class="formInWindowAddingInfo">
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажие URL картинки-обложки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваш URL" required name="URL_input" autocomplete="off">
+						</label>
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажите описание карточки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваше описание" required name="description_input" autocomplete="off">
+						</label>
+						<button class="formInWindowAddingInfo-addButton" type="submit" name="buttonForAddChanges" disabled>Добавить карточку</button>
+					</form>
+				</div>
+			</div>
+			<div class="grid-container__item" id="itemGrid6">
+				<div class="grid-container__item_clickForChanges hidden"></div>
+				<div class="grid-container__item_grayScreen"></div>
+				<div class="grid-container__item_mainWindow">
+					<img class="grid-container__item_mainWindow--img" src="https://cdn4.iconfinder.com/data/icons/fruits-79/48/27-passion_fruit-128.png" alt="">
+					<h2 class="grid-container__item_mainWindow--description">Это маракуйя</h2>
+				</div>
+				<div class="grid-container__item_addScreenSaver hidden"></div>
+				<div class="grid-container__item_windowAddingInfo hidden">
+					<div class="grid-container__item_windowAddingInfo--cross"></div>
+					<form action="" class="formInWindowAddingInfo">
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажие URL картинки-обложки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваш URL" required name="URL_input" autocomplete="off">
+						</label>
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажите описание карточки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваше описание" required name="description_input" autocomplete="off">
+						</label>
+						<button class="formInWindowAddingInfo-addButton" type="submit" name="buttonForAddChanges" disabled>Добавить карточку</button>
+					</form>
+				</div>
+			</div>
+			<div class="grid-container__item" id="itemGrid7">
+				<div class="grid-container__item_clickForChanges hidden"></div>
+				<div class="grid-container__item_grayScreen"></div>
+				<div class="grid-container__item_mainWindow">
+					<img class="grid-container__item_mainWindow--img" src="https://cdn4.iconfinder.com/data/icons/vegetables-60/48/Fruits_apple_food-128.png" alt="">
+					<h2 class="grid-container__item_mainWindow--description">Это яблочко</h2>
+				</div>
+				<div class="grid-container__item_addScreenSaver hidden"></div>
+				<div class="grid-container__item_windowAddingInfo hidden">
+					<div class="grid-container__item_windowAddingInfo--cross"></div>
+					<form action="" class="formInWindowAddingInfo">
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажие URL картинки-обложки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваш URL" required name="URL_input" autocomplete="off">
+						</label>
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажите описание карточки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваше описание" required name="description_input" autocomplete="off">
+						</label>
+						<button class="formInWindowAddingInfo-addButton" type="submit" name="buttonForAddChanges" disabled>Добавить карточку</button>
+					</form>
+				</div>
+			</div>
+			<div class="grid-container__item" id="itemGrid8">
+				<div class="grid-container__item_clickForChanges hidden"></div>
+				<div class="grid-container__item_grayScreen"></div>
+				<div class="grid-container__item_mainWindow">
+					<img class="grid-container__item_mainWindow--img" src="https://cdn4.iconfinder.com/data/icons/fruits-79/48/24-blueberry-128.png" alt="">
+					<h2 class="grid-container__item_mainWindow--description">Это черничка</h2>
+				</div>
+				<div class="grid-container__item_addScreenSaver hidden"></div>
+				<div class="grid-container__item_windowAddingInfo hidden">
+					<div class="grid-container__item_windowAddingInfo--cross"></div>
+					<form action="" class="formInWindowAddingInfo">
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажие URL картинки-обложки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваш URL" required name="URL_input" autocomplete="off">
+						</label>
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажите описание карточки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваше описание" required name="description_input" autocomplete="off">
+						</label>
+						<button class="formInWindowAddingInfo-addButton" type="submit" name="buttonForAddChanges" disabled>Добавить карточку</button>
+					</form>
+				</div>
+			</div>
+			<div class="grid-container__item" id="itemGrid9">
+				<div class="grid-container__item_clickForChanges hidden"></div>
+				<div class="grid-container__item_grayScreen"></div>
+				<div class="grid-container__item_mainWindow">
+					<img class="grid-container__item_mainWindow--img" src="https://cdn4.iconfinder.com/data/icons/vegetables-60/48/Fruits_strawberry_food-128.png" alt="">
+					<h2 class="grid-container__item_mainWindow--description">Это клубничка</h2>
+				</div>
+				<div class="grid-container__item_addScreenSaver hidden"></div>
+				<div class="grid-container__item_windowAddingInfo hidden">
+					<div class="grid-container__item_windowAddingInfo--cross"></div>
+					<form action="" class="formInWindowAddingInfo">
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажие URL картинки-обложки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваш URL" required name="URL_input" autocomplete="off">
+						</label>
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажите описание карточки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваше описание" required name="description_input" autocomplete="off">
+						</label>
+						<button class="formInWindowAddingInfo-addButton" type="submit" name="buttonForAddChanges" disabled>Добавить карточку</button>
+					</form>
+				</div>
+			</div>
+			<div class="grid-container__item" id="itemGrid10">
+				<div class="grid-container__item_clickForChanges hidden"></div>
+				<div class="grid-container__item_grayScreen"></div>
+				<div class="grid-container__item_mainWindow"></div>
+				<div class="grid-container__item_addScreenSaver"></div>
+				<div class="grid-container__item_windowAddingInfo hidden">
+					<div class="grid-container__item_windowAddingInfo--cross"></div>
+					<form action="" class="formInWindowAddingInfo">
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажие URL картинки-обложки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваш URL" required name="URL_input" autocomplete="off">
+						</label>
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажите описание карточки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваше описание" required name="description_input" autocomplete="off">
+						</label>
+						<button class="formInWindowAddingInfo-addButton" type="submit" name="buttonForAddChanges" disabled>Добавить карточку</button>
+					</form>
+				</div>
+			</div>
+			<div class="grid-container__item" id="itemGrid11">
+				<div class="grid-container__item_clickForChanges hidden"></div>
+				<div class="grid-container__item_grayScreen"></div>
+				<div class="grid-container__item_mainWindow"></div>
+				<div class="grid-container__item_addScreenSaver"></div>
+				<div class="grid-container__item_windowAddingInfo hidden">
+					<div class="grid-container__item_windowAddingInfo--cross"></div>
+					<form action="" class="formInWindowAddingInfo">
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажие URL картинки-обложки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваш URL" required name="URL_input" autocomplete="off">
+						</label>
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажите описание карточки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваше описание" required name="description_input" autocomplete="off">
+						</label>
+						<button class="formInWindowAddingInfo-addButton" type="submit" name="buttonForAddChanges" disabled>Добавить карточку</button>
+					</form>
+				</div>
+			</div>
+			<div class="grid-container__item" id="itemGrid12">
+				<div class="grid-container__item_clickForChanges hidden"></div>
+				<div class="grid-container__item_grayScreen"></div>
+				<div class="grid-container__item_mainWindow"></div>
+				<div class="grid-container__item_addScreenSaver"></div>
+				<div class="grid-container__item_windowAddingInfo hidden">
+					<div class="grid-container__item_windowAddingInfo--cross"></div>
+					<form action="" class="formInWindowAddingInfo">
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажие URL картинки-обложки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваш URL" required name="URL_input" autocomplete="off">
+						</label>
+						<label class="formInWindowAddingInfo-inputBlock">
+							<span class="formInWindowAddingInfo-inputBlock__description">Укажите описание карточки*</span>
+							<input type="text" class="formInWindowAddingInfo-inputBlock__input" placeholder="Ваше описание" required name="description_input" autocomplete="off">
+						</label>
+						<button class="formInWindowAddingInfo-addButton" type="submit" name="buttonForAddChanges" disabled>Добавить карточку</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="./js/script.js"></script>
 </html>

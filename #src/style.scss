@@ -1,0 +1,305 @@
+* {
+	box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+h1,
+h2,
+img,
+span,
+input,
+button {
+	user-select: none;
+}
+.theHint {
+    text-align: center;
+    color: slategrey;
+}
+.changeCards {
+    position: absolute;
+    cursor: pointer;
+    top: 50px;
+    left: 50px;
+    width: 100px;
+    height: 130px;
+    background-image: url("../img/cards.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    &_text {
+        position: absolute;
+        margin: 0;
+        line-height: 26px;
+        bottom: 0;
+    }
+    @at-root {
+        @media screen and (max-width: 1350px) {
+            .changeCards {
+                position: relative;
+                display: block;
+                margin: 30px auto 0;
+                top: 0;
+                left: 0;
+            }
+            .grid-container {
+                margin: 100px auto;
+            }
+        }
+    }
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 31.2% 31.2% 31.2%;
+    column-gap: 3.2%;
+    margin: 200px auto;
+    width: 90%;
+    max-width: 1800px;
+    &__item {
+        position: relative;
+        height: 400px;
+        margin-bottom: 3vw;
+        border-radius: 5px;
+        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
+        transition: 0.5s;
+        &:hover {
+            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.7);
+        }
+        &_grayScreen {
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            animation: ScreenToDefaultSlowly 1s forwards;
+        }
+        &_clickForChanges {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background-image: url("../img/pencil.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            z-index: 3;
+            animation: showTab 1s forwards;
+            &:hover {
+                transform: scale(1.2,1.2) !important;
+            }
+        }
+        &_mainWindow {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            animation: showTab 1s forwards;
+            overflow: hidden;
+            &--img {
+                display: block;
+                margin: 50px auto 0;
+                height: 220px;
+            }
+            &--description {
+                font-size: 30px;
+                width: 100%;
+                padding: 0 5%;
+                text-align: center;
+                color: rgba(0, 0, 0, 0.7);
+            }
+        }
+        &_addScreenSaver {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background-image: url("../img/add.png");
+            background-repeat: no-repeat;
+            background-size: 30%;
+            background-position: 50% 50%;
+            animation: showTab 1s forwards;
+        }
+        &_windowAddingInfo {
+            position: absolute;
+            visibility: visible;
+            width: 100%;
+            height: 100%;
+            animation: showTab 1s forwards;
+            &--cross {
+                position: absolute;
+                cursor: pointer;
+                right: 5px;
+                top: 5px;
+                width: 35px;
+                height: 35px;
+                background-image: url("../img/cross.png");
+                background-size: contain;
+                transition: 0.5s;
+                &:hover {
+                    transform: scale(0.88,0.88);
+                }
+            }
+            @at-root {
+                .formInWindowAddingInfo {
+                    padding: 2vw;
+                    &-inputBlock{
+                        display: block;
+                        width: 100%;
+                        &__description {
+                            display: block;
+                            line-height: 40px;
+                        }
+                        &__input {
+                            display: block;
+                            width: 100%;
+                            padding: 0 5px;
+                            border-radius: 6px;
+                            font-size: 16px;
+                            line-height: 25px;
+                            outline: none;
+                            border: 1px solid #8692A6;
+                            &::placeholder {
+                                font-size: 14px;
+                                line-height: 16.94px;
+                                color: #8692A6;
+                            }
+                        }
+                    }
+                    &-addButton {
+                        padding: 10px 15px;
+                        outline: none;
+                        cursor: pointer;
+                        border: 2px solid #8692A6;
+                        border-radius: 5px;
+                        background-color: rgb(219, 255, 219);
+                        margin-top: 30px;
+                        transition: 1s;
+                        &:hover {
+                            transform: scale(1.02,1.02);
+                            background-color: darken(rgb(219, 255, 219),15%);
+                        }
+                        &:active {
+                            background-color: darken(rgb(219, 255, 219),30%);
+                            transition: 0.1s;
+                        }
+                        &:disabled {
+                            background-color: rgb(202, 202, 202);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @at-root {
+        @media screen and (max-width: 1350px) {
+            .grid-container {
+                margin: 50px auto;
+            }
+        }
+        @media screen and (max-width: 1400px) and (min-width: 1000px) {
+            .grid-container {
+                grid-template-columns: 48.4% 48.4%;
+            }
+        }
+        @media screen and (max-width: 1000px) {
+            .grid-container {
+                grid-template-columns: 100%;
+                column-gap: 0;
+            }
+        }
+    }
+}
+@at-root {
+    @keyframes hiddenTab {
+        from {
+            transform: scale(1,1);
+            opacity: 1;
+        };
+        10% {
+            transform: scale(0.95,0.95);
+            opacity: 0.5;
+        };
+        100% {
+            transform: scale(0.8,0.8);
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    @keyframes showTab {
+        from {
+            transform: scale(0.8,0.8);
+            opacity: 0;
+            visibility: visible;
+        };
+        10% {
+            transform: scale(0.95,0.95);
+            opacity: 0.5;
+        };
+        100% {
+            transform: scale(1,1);
+            opacity: 1;
+        }
+    }
+    @keyframes softTextChangeGreen {
+        from {
+            text-shadow: 0 0 10px rgba(196, 47, 10, 0.9);
+        };
+        10% {
+            opacity: 0;
+        };
+        100% {
+            text-shadow: 0 0 10px rgba(10, 196, 103, 0.9);
+            opacity: 1;
+        }
+    }
+    @keyframes softTextChangeRed {
+        from {
+            text-shadow: 0 0 10px rgba(10, 196, 103, 0.9);
+        };
+        10% {
+            opacity: 0;
+        };
+        100% {
+            text-shadow: 0 0 10px rgba(196, 47, 10, 0.9);
+            opacity: 1;
+        }
+    }
+    @keyframes greyScreenSlowly {
+        from {
+            opacity: 0;
+            background: rgb(240, 240, 240);
+        };
+        10% {
+            opacity: 0.15;
+            background: rgb(231, 231, 231);
+        };
+        100% {
+            background: rgb(179, 179, 179);
+            opacity: 0.5;
+        }
+    }
+    @keyframes ScreenToDefaultSlowly {
+        from {
+            background: rgb(179, 179, 179);
+            opacity: 0.5;
+        };
+        10% {
+            background: rgb(207, 207, 207);
+        };
+        50% {
+            background: rgb(240, 240, 240);
+        };
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+.hidden {
+    animation: hiddenTab 1s forwards;
+}
+.colorShadowTextGreen {
+    animation: softTextChangeGreen 1s forwards;
+}
+.colorShadowTextRed {
+    animation: softTextChangeRed 1s forwards;
+}
+.greyScreen {
+    animation: greyScreenSlowly 1s forwards;
+}
