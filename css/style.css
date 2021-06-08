@@ -62,6 +62,7 @@ button {
 .grid-container__item {
   position: relative;
   height: 400px;
+  overflow: hidden;
   margin-bottom: 3vw;
   border-radius: 5px;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
@@ -103,7 +104,6 @@ button {
   height: 100%;
   position: absolute;
   animation: showTab 1s forwards;
-  overflow: hidden;
 }
 
 .grid-container__item_mainWindow--img {
