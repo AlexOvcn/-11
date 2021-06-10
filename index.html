@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>main</title>
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/fonts.css">
-</head>
-<body>
-	<section>
-		
-	</section>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=500, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>dz-27</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<section class="sectionOne">
+			<h1 class="sectionOne_title">
+				Конвертация валют
+			</h1>
+			<div class="container">
+				<form action="" class="currencyConversion" name="conversion">
+					<input type="text" class="currencyConversion_input firstInput" name="curruncy" autocomplete="off">
+					<label class="currencyConversion_title" for="inputOne">RUB:</label>
+					<input type="text" class="currencyConversion_input secondInput" name="curruncy" autocomplete="off">
+					<label class="currencyConversion_title" for="inputTwo">USD:</label>
+					<input type="text" class="currencyConversion_input thirdInput" name="curruncy" autocomplete="off">
+					<label class="currencyConversion_title" for="inputThree">EUR:</label>
+					<button type="submit" class="currencyConversion_calculation" name="result" disabled>Введите число в одно любое поле</button>
+				</form>
+				<div class="statusBar">
+					<h2 class="statusBar_title"> Статус взаимодействия с сервером:</h2>
+					<div class="statusBar_body">----</div>	
+				</div>
+			</div>
+			<div class="sectionOne_decorationImageFirst">
+				<img src="./img/USD.png" alt="USD" class="decorationImageFirst_img" width="200px">
+			</div>
+			<div class="sectionOne_decorationImageSecond">
+				<img src="./img/EUR.png" alt="EUR" class="decorationImageSecond_img" width="200px">
+			</div>
+		</section>
+	</body>
+	<script src="./js/script.js"></script>
 </html>
