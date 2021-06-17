@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h1,
+h2,
+img,
+input,
+button {
+    -webkit-user-select: none;
+            user-select: none;
+}
+h1,
+h2,
+p,
+span {
+    font-family: 'fantasy', sans-serif;
+    margin: 0;
+}
+::selection {
+    background: rgb(235, 221, 199);
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+.header {
+    background: rgb(245,245,220);
+    background: linear-gradient(0deg, rgba(245,245,220,1) 0%, rgba(245,229,220,1) 100%);
+    border-bottom: 1px solid rgb(255, 185, 185);
+    text-align: center;
+    padding: 20px 0;
+    &-coverSite {
+        &__title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            background: linear-gradient(0deg, rgb(255, 118, 65) 30%, rgb(238, 163, 136) 70%, rgb(255, 212, 197));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &__description {
+            color: indianred;
+            background: linear-gradient(0deg, rgb(182, 68, 23) 48%, rgb(221, 127, 92) 55%, rgb(160, 43, 0));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+    }
+}
+.sectionOne {
+    background-color: rgba(245, 245, 220, 0.432);
+    padding: 50px 0;
+    border-bottom: 2px dotted rgb(255, 185, 185);
+    &-formOne {
+        margin: 0 auto;
+        width: 500px;
+        &__element {
+            position: relative;
+            display: block;
+            margin-bottom: 15px;
+            &_title {
+                display: inline-block;
+                margin-bottom: 7px;
+                color: rgb(199, 74, 28);
+            }
+            &_eye {
+                display: inline-block;
+                position: absolute;
+                top: 26px;
+                right: 7px;
+                background-image: url('../img/eye.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 25px;
+                height: 25px;
+                &:hover {
+                    filter: drop-shadow(0 0 5px rgb(197, 197, 197))
+                }
+            }
+            &_input {
+                outline: none;
+                border: 2px groove rgb(192, 192, 192);
+                width: 100%;
+                padding: 2px 50px 2px 5px;
+                transition: 0.2s;
+                &:focus {
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                }
+            }
+            &_dataBlock {
+                padding-left: 5px;
+                height: 26.4px;
+                width: 100%;
+                background: white;
+                border: 2px groove rgb(192, 192, 192);
+                transition: .2s;
+                &:focus-within {
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                }
+                &--dash {
+                    font-weight: 100;
+                    &:last-child {
+                        color: rgba(0, 0, 0, 0.342);
+                    }
+                }
+                &--input {
+                    padding: 2px 0 0 0;
+                    border: 0;
+                    outline: none;
+                    font-weight: 100;
+                    &:first-child {
+                        width: 32px;
+                    }
+                    &:nth-child(3), &:nth-child(5) {
+                        width: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+.sectionTwo {
+    padding: 50px 0;
+    background-color: rgba(245, 245, 220, 0.432);
+    &-formTwo {
+        
+        &__input {
+            margin: 0 10px 20px 0;
+            border: 2px groove rgb(192, 192, 192);
+            outline: none;
+            transition: 0.2s;
+            color: rgba(0, 0, 0, 0.849);
+                &:focus {
+                    box-shadow: 0 0 10px #00000033;
+                }
+        }
+        &__forInput {
+            color: rgb(185, 3, 57);
+        }
+        &__textarea {
+            display: block;
+            border: 2px groove rgb(192, 192, 192);
+            resize: none;
+            width: 500px;
+            height: 200px;
+            outline: none;
+            margin-bottom: 10px;
+            transition: 0.2s;
+            color: rgba(0, 0, 0, 0.849);
+                &:focus {
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                }
+        }
+        &__button {
+            padding: 5px 10px;
+            cursor: pointer;
+            border: 1px solid rgb(160, 0, 61);
+            color: rgb(185, 0, 31);
+            font-family: 'fantasy', sans-serif;
+            background-color: rgb(252, 223, 213);
+            transition: 0.2s;
+            &:hover {
+                background-color: darken(rgb(252, 223, 213), 3%);
+            }
+            &:active {
+                transition: 0.1s;
+                background-color: darken(rgb(252, 223, 213), 10%);
+                color: lighten(rgb(185, 0, 31), 10%);
+                transform: scale(0.96,0.96);
+            }
+        }
+        @at-root {
+            .frameForFormTwo {
+                margin: 0 auto;
+                width: 600px;
+                padding: 20px 0 20px 15px;
+                border: 1px solid rgb(255, 163, 163);
+                margin-bottom: 50px;
+                &-legend {
+                    color: rgb(212, 100, 100);
+                }
+            }
+        }
+    }
+    &-messageOfUsers {
+        @at-root {
+            .frameForMessageOfUsers {
+                margin: 0 auto;
+                width: 600px;
+                min-height: 100px;
+                max-height: 500px;
+                padding-top: 20px;
+                border: 1px solid rgb(255, 163, 163);
+                &-legend {
+                    color: rgb(212, 100, 100);
+                }
+            }
+        }
+        &-messagesField {
+            width: 99%;
+            margin: 0 auto;
+            height: 98%;
+            background-color: white;
+            border: 2px groove rgb(192, 192, 192);
+            overflow-Y: scroll;
+            &__empty {
+                text-align: center;
+                color: rgba(0, 0, 0, 0.377);
+            }
+            & > div {
+                position: relative;
+                width: 100%;
+                padding: 20px 100px 20px 10px;
+                &:not(:nth-child(1)) {
+                    border-top: 1px solid rgba(0, 0, 0, 0.055);
+                }
+                @at-root {
+                    .mainTextInComment {
+                        font-family: 'Times New Roman', Times, serif;
+                        display: inline-block;
+                        font-weight: 300;
+                        color: rgba(0, 0, 0, 0.849);
+                        &-name {
+                            display: inline-block;
+                            color: rgb(211, 70, 70);
+                            margin-right: 10px;
+                        }
+                        &-email {
+                            color: rgba(255, 0, 0, 0.774);
+                            font-family: inherit;
+                        }
+                    }
+                    .timeMarkInComment {
+                        display: inline-block;
+                        position: absolute;
+                        right: 10px;
+                        top: 10px;
+                        font-size: 12px;
+                        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                        color: rgb(250, 144, 144);
+                    }
+                }
+            }
+        }
+    }
+}

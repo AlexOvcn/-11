@@ -1,15 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>main</title>
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/fonts.css">
-</head>
-<body>
-	<section>
-		
-	</section>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=500, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<title>dz-28</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<header class="header">
+			<div class="header-coverSite">
+				<h1 class="header-coverSite__title">Здравствуйте</h1>
+				<p class="header-coverSite__description">Пожалуйста заполните форму!</p>
+			</div>
+		</header>
+		<section class="sectionOne">
+			<div class="container">
+				<form action="#test.php" method="post" id="formOne" class="sectionOne-formOne"> 
+					<label class="sectionOne-formOne__element">
+						<span class="sectionOne-formOne__element_title">Логин: </span>
+						<input class="sectionOne-formOne__element_input" id="login" name="login" type="text" autocomplete="off" placeholder="Ваш логин..."/>
+					</label>
+					<label class="sectionOne-formOne__element">
+						<span class="sectionOne-formOne__element_title">Имя: </span>
+						<input class="sectionOne-formOne__element_input" id="name" name="name" type="text" autocomplete="offNotWorking" placeholder="Ваше имя..."/>
+					</label class="sectionOne-formOne__element">
+					<label class="sectionOne-formOne__element">
+						<span class="sectionOne-formOne__element_title">Дата рождения: </span>
+						<div class="sectionOne-formOne__element_dataBlock" tabindex="-1">
+							<input class="sectionOne-formOne__element_dataBlock--input" type="text" name="year" id="dataYear" maxlength="4" autocomplete="no" placeholder="____">
+							<span class="sectionOne-formOne__element_dataBlock--dash">-</span>
+							<input class="sectionOne-formOne__element_dataBlock--input" type="text" name="month" id="dataMonth" maxlength="2" autocomplete="no" placeholder="__">
+							<span class="sectionOne-formOne__element_dataBlock--dash">-</span>
+							<input class="sectionOne-formOne__element_dataBlock--input" type="text" name="day" id="dataDay" maxlength="2" autocomplete="no" placeholder="__">
+							<span class="sectionOne-formOne__element_dataBlock--dash">(гг.мм.дд)</span>
+						</div>
+						<!-- <input class="sectionOne-form__element_input" id="date" name="date" type="text" autocomplete="off"/> -->
+					</label>
+					<label class="sectionOne-formOne__element">
+						<span class="sectionOne-formOne__element_title">Пароль: </span>
+						<div class="sectionOne-formOne__element_eye" id="eye"></div>
+						<input class="sectionOne-formOne__element_input" id="pass" name="pass" type="password" autocomplete="off" placeholder="Ваш пороль..."/>
+					</label>
+				</form>
+			</div>
+		</section>
+		<section class="sectionTwo">
+			<div class="container">
+				<form action="" class="sectionTwo-formTwo" id="formTwo">
+					<fieldset class="frameForFormTwo">
+						<legend class="frameForFormTwo-legend">Гостева книга: </legend>
+						<input class="sectionTwo-formTwo__input" type="text" name="name" id="nameFromTwoForm" autocomplete="offNotWorking" placeholder="Ваше имя..." required minlength="3">
+						<span class="sectionTwo-formTwo__forInput">- имя</span>
+						<textarea class="sectionTwo-formTwo__textarea" name="message" id="messageFromTwoForm" placeholder="Ваш комментарий..." required></textarea >
+						<button class="sectionTwo-formTwo__button" id="button_twoForm">Добавить сообщение</button>
+					</fieldset>
+				</form>
+				<div class="sectionTwo-messageOfUsers">
+					<fieldset class="frameForMessageOfUsers">
+						<legend class="frameForMessageOfUsers-legend">Сообщения пользователей:</legend>
+						<div class="sectionTwo-messageOfUsers-messagesField">
+							<h5 class="sectionTwo-messageOfUsers-messagesField__empty">Еще пока ни один пользователь не оставил комментарий!</h5>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</section>
+	</body>
+	<script src="./js/script.js"></script>
 </html>
