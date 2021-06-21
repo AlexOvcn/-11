@@ -1,0 +1,21 @@
+.header {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    &-mainTitle {
+        display: inline-block;
+        margin-right: 10px;
+        background: linear-gradient(0deg, rgb(99, 10, 10) 10%, rgb(185, 64, 64) 40%, rgb(255, 200, 200));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 15px rgba(202, 97, 97, 0.411);
+    }
+    &-emblem {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-image: url('../img/emblem of perm.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

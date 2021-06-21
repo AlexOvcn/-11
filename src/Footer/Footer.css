@@ -1,0 +1,23 @@
+.footer {
+  margin-top: 100px;
+  padding-bottom: 75px;
+}
+
+.footer-photoNature {
+  background-color: red;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 500px;
+}
+
+.footer-photoNature:not(:nth-child(3)) {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.719);
+}
+
+.footer-end {
+  font-size: 25px;
+  color: brown;
+  margin-top: 75px;
+  text-align: center;
+}

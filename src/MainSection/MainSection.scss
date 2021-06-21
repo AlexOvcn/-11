@@ -1,0 +1,21 @@
+.mainSection {
+    color: brown;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.267);
+    &-description {
+        width: 45%;
+        margin-top: 20px;
+    }
+    &-annotation {
+        text-align: center;
+        margin-top: 150px;
+    }
+    &-descriptionForAttractions {
+        margin-top: 150px;
+        float: right;
+        width: 600px;
+    }
+    &-nature {
+        margin-top: 100px;    
+        text-align: center;
+    }
+}
