@@ -1,0 +1,36 @@
+.mainSection-runner {
+  margin: 35px auto 0;
+  width: 400px;
+  height: 20px;
+  background-color: #983ebb;
+  background: radial-gradient(#f879e7, #983ebb);
+  border-radius: 10px;
+}
+
+.mainSection-runner__slider {
+  position: relative;
+  display: inline-block;
+  top: calc((20px / 2) - 50px / 2);
+  left: 175px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(#881879, #3d0035);
+  border-radius: 50%;
+  transition: filter 0.5s, transform 0.2s;
+}
+
+.mainSection-runner__slider:active {
+  transform: scale(1.5, 1.5);
+}
+
+.mainSection-runner__slider:hover {
+  filter: drop-shadow(0 0 15px #f3c8ed);
+}
+
+.mainSection-runner__range {
+  margin: 0 auto;
+  color: blueviolet;
+  width: 80px;
+  filter: drop-shadow(0 0 5px #960000);
+}

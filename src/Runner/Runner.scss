@@ -1,0 +1,32 @@
+.mainSection-runner {
+    margin: 35px auto 0;
+    width: 400px;
+    height: 20px;
+    background-color: rgb(152, 62, 187);
+    background: radial-gradient(rgb(248, 121, 231), rgb(152, 62, 187));
+    border-radius: 10px;
+    &__slider {
+        position: relative;
+        display: inline-block;
+        top: calc((20px / 2) - 50px / 2);
+        left: 175px;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        background: radial-gradient(rgb(136, 24, 121), rgb(61, 0, 53));
+        border-radius: 50%;
+        transition: filter 0.5s, transform 0.2s;
+        &:active {
+            transform: scale(1.5,1.5);
+        }
+        &:hover {
+            filter: drop-shadow(0 0 15px rgb(243, 200, 237));
+        }
+    }
+    &__range {
+        margin: 0 auto;
+        color: blueviolet;
+        width: 80px;
+        filter: drop-shadow(0 0 5px rgb(150, 0, 0));
+    }
+}

@@ -1,0 +1,16 @@
+.mainSection-infoArtist {  
+    padding-top: 50px;
+    text-align: center;
+    &__albumTitle {
+        color: rgb(104, 46, 148);
+    }
+    &__yearOfPublication {
+        margin-top: 5px;
+        color: rgb(72, 32, 102);
+        font-weight: 600;
+    }
+    &__artistName {
+        margin-top: 12px;
+        color: rgb(113, 0, 117);
+    }
+}
