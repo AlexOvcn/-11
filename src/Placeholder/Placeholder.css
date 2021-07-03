@@ -1,0 +1,48 @@
+.placeholders {
+  margin: 80px auto 0;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.placeholders-item {
+  margin-top: 20px;
+}
+
+.myPlaceholder {
+  width: 80%;
+  margin: 30px auto 0;
+}
+
+.myPlaceholder-input {
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid red;
+  border-radius: 3px;
+  display: block;
+  width: 300px;
+  height: 20px;
+  margin: 0 auto;
+  padding: 0 5px;
+  transition: 0.2s;
+}
+
+.myPlaceholder-input:focus {
+  border-bottom: 1px solid #99ff00;
+}
+
+.myPlaceholder-input::placeholder {
+  text-align: center;
+}
+
+.myPlaceholder-img {
+  display: block;
+  margin: 20px auto 0;
+  min-width: 100px;
+}
+
+.myPlaceholder-text {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.767);
+}

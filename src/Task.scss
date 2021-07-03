@@ -1,0 +1,46 @@
+.task {
+    background: #FFF;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.507), inset 0 0 10px rgba(0, 0, 0, 0.16);
+    padding: 3px 10px;
+    font-size: 12px;
+    margin-bottom: 6px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 1s;
+    &-buttonDone, &-buttonDelete {
+        background-color: rgb(220, 245, 223);
+        outline: none;
+        border: 1px solid rgb(83, 44, 44);
+        border-radius: 4px;
+        transition: 0.1s;
+        &:hover {
+            background-color: darken(rgb(220, 245, 223), 15%);
+        }
+        &:active {
+            transform: scale(0.93,0.93);
+        }
+    }
+}
+.hidden {
+    animation: hiddenAnim 1.6s forwards;
+}
+@keyframes hiddenAnim {
+    from {
+        transform: scale(1, 1);
+        margin-bottom: 4px;
+        font-size: 12px;
+        opacity: 1;
+    };
+    50% {
+        transform: scale(1, 0);
+    }
+    60% {
+        opacity: 0;
+    }
+    99% {
+        margin-bottom: -29px;
+        
+    };
+}
