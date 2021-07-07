@@ -1,0 +1,8 @@
+.section-main__img404 {
+  margin: 25px auto 0;
+  width: 200px;
+  height: 100px;
+  background-image: url("./page404.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}

@@ -1,0 +1,41 @@
+.section {
+    color: rgb(68, 56, 0);
+    &-productInfo {
+        position: relative;
+        margin: 0 auto;
+        width: 50%;
+        margin-top: 80px;
+        text-align: center;
+        &__title {
+            margin-bottom: 30px;
+        }
+        &__img {
+            height: 50%;
+            width: 90%;
+        }
+        &__price {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        &__button {
+            position: absolute;
+            left: 0;
+            cursor: pointer;
+            outline: none;
+            padding: 5px 10px;
+            background-color: rgb(248, 255, 236);
+            border: 1px solid green;
+            border-radius: 3px;
+            transition: 0.1s;
+            &:hover {
+                background-color: darken(rgb(248, 255, 236), 4%);
+                transform: scale(1.02,1.02);
+            }
+            &:active {
+                background-color: darken(rgb(248, 255, 236), 10%);
+                transform: scale(1.08,1.08);
+            }
+        }
+    }
+}
