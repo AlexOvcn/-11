@@ -3,6 +3,11 @@ import {withRouter} from "react-router"
 import './ProductInfo.css'
 
 class ProductInfo extends React.Component {
+    componentDidMount() {
+        if (this.props.data.price === 0) {
+            this.props.history.push('/NotFound')
+        }
+    }
     goProduct() {
         this.props.history.push({
             pathname: '/products'

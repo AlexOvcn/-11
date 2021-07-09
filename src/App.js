@@ -20,6 +20,7 @@ class App extends React.Component {
     }
   }
   forProductInfo(value) {
+    console.log(this.state);
     this.setState(value)
   }
   animation(newPosition) {
