@@ -1,0 +1,13 @@
+.mainSection-needRegistration {
+    text-align: center;
+    margin-top: calc(50vh - 157px);
+    &__title {
+        color: coral;
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    &__description {
+        color: rgb(223, 114, 74);
+        margin-bottom: 30px;
+    }
+}

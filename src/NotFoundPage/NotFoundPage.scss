@@ -1,0 +1,17 @@
+.mainSection-notFound {
+    text-align: center;
+    padding: 50px 0 20px;
+    &__title {
+        font-size: 25px;
+    }
+    &__description {
+        margin-top: 10px;
+    }
+    &__img404 {
+        margin: 20px auto;
+        width: 400px;
+        height: 260px;
+        background-image: url('./page404.png');
+        background-size: cover;
+    }
+}

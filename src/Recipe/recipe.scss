@@ -1,0 +1,25 @@
+.mainSection-recipe {
+    &__title {
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 70px;
+    }
+    &__img {
+        display: inline-block;
+        vertical-align: middle;
+        width: 400px;
+        margin-bottom: 50px;
+    }
+    &__info {
+        display: inline-block;
+        margin: 20px 0 50px 30px;
+        vertical-align: top;
+        width: 45vw;
+        &_category {
+            margin-bottom: 5px;
+        }
+        &_country {
+            margin-bottom: 10px;
+        }
+    }
+}
