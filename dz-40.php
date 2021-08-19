@@ -11,7 +11,6 @@
     <section>
         <?php
         session_start();
-        $_SESSION['BD_successful_connection'] = false;
 
         // защита от повторной отправки формы
         if (count($_POST)) {
@@ -38,13 +37,14 @@
                 echo "<h4 class='err'>Нет соединения с БД</h4>";
                 echo "<p class='err'>Код ошибки: " . mysqli_connect_errno() . "</p>";
                 echo "<p class='err'>Текст ошибки: " . mysqli_connect_error() . "</p>";
+                exit; // весь скрипт что ниже не выполнится
             }
         }
 
         ?>
         <table class='slow_showing'>
             <?php
-                if (isset($_COOKIE['request']) and $_SESSION['BD_successful_connection']) {
+                if (isset($_COOKIE['request'])) {
                     if ($_COOKIE['request'] === '1') {
 
                         $response = mysqli_query($link, "SELECT COUNT(I.id) AS 'Количество инструкторов', SS.section_name AS 'Название спортивной секции' FROM instructors AS I, sports_sections AS SS WHERE SS.id = I.id_sports_section GROUP BY SS.section_name"); // получение ответа в виде объекта
