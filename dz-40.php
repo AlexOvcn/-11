@@ -18,6 +18,7 @@
         }
         if (count($_POST)) {
             header('Location: http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+            exit;
         }
         ?>
         <form action="dz-40.php" method="POST" >
