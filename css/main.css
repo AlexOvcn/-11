@@ -1,5 +1,123 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "Arial", serif; }
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.text-center {
+    text-align: center;
+}
+.hiddenInput {
+    animation: slowHiddenInput 0.2s forwards;
+}
+
+.slowShowing {
+    animation: slowShowingAnim 1s forwards;
+}
+
+@keyframes slowShowingAnim {
+    from {
+        visibility: hidden;
+        opacity: 0;
+        padding: 0 .75rem;
+    }
+    40% {
+        opacity: .6;
+    }
+    to {
+        visibility: visible;
+        opacity: 1;
+        padding: .375rem .75rem;
+    }
+}
+
+@keyframes slowHiddenInput {
+    from {
+        visibility: visible;
+        opacity: 1;
+        padding: .375rem .75rem;
+    }
+    40% {
+        opacity: .6;
+    }
+    to {
+        visibility: hidden;
+        opacity: 0;
+        padding: 0 .75rem;
+    }
+}
+
+.imageBlock {
+    display: flex;
+    justify-content: space-around;
+}
+
+.image {
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 10px;
+    transition: 1s;
+}
+.image:hover {
+    opacity: 0.8;
+    border-radius: 4px;
+}
+
+.commentsBlock > div:not(:first-child) {
+    margin-top: 20px;
+}
+.comment {
+    display: flex;
+    min-height: 200px;
+    background: white;
+    padding: 20px;
+}
+.comment-info {
+    margin-right: 15px;
+    width: 150px;
+}
+.comment-info > p:not(:last-child) {
+    margin: 0;
+    font-size: 14px;
+}
+.comment-info span {
+    opacity: 0.7;
+    font-size: 12px;
+}
+.comment-info__avatar {
+    background-image: url('../source/avatar.png');
+    background-size: cover;
+    margin-bottom: 10px;
+    width: 110px;
+    height: 110px;
+}
+.comment-info__sendingTime {
+    font-size: 11px;
+}
+.comment-textField {
+    background-color: rgb(247, 247, 247);
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+}
+.comment-textField__text {
+    width: 100%;
+}
+.starsAndCostBlock {
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(to left, transparent 8%, rgb(196, 196, 196) 50%, transparent 92%);
+    border-image-slice: 1;
+}
+.cost {
+    background-image: url('../source/cost.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 80%;
+}
+.cost > p {
+    font-size: 70px;
+    color: rgb(49, 49, 49);
+    font-weight: 600;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.671);
+}
