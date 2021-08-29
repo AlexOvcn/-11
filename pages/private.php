@@ -50,9 +50,14 @@ if (isset($_POST['add_admin'])) {
     fclose($file);
     // Прочитанный файл обрабатываем функцией addslashes(),
     // которая экранирует потенциально опасные символы
-    $img = addslashes($img);
+    $img = addslashes(($img));
+
+    // Второй вариант загрузки картинки в BLOB БД (все что написано после обьявления $filename не нужно)
+    // $img = addslashes(file_get_contents($filename));
+    // (file_get_contents - получить содержимое файла в виде одной строки)
+
     // Подготовка SQL-запроса
-    $insert = "UPDATE users SET avatar='.$img.', role_id=1 WHERE id='$user_id'";
+    $insert = "UPDATE users SET avatar='$img', role_id=1 WHERE id='$user_id'";
     // Отправка SQL-запроса
     $connect->query($insert);
 }
@@ -78,7 +83,11 @@ $res = $connect->query($sel);
             <td><?php echo $row[0] ?></td>
             <td><?php echo $row[1] ?></td>
             <td><?php echo $row[3] ?></td>
-            <td><img src="<?php echo "data:image/jpeg;charset=utf-8;base64,$img" ?>" width="30" height="30" alt></td>
+            <td><img src="<?php if (empty($img)) {
+                echo "./source/avatar.png";
+            } else {
+                echo "data:image/png;base64,$img";
+            }?>" width="30" height="30" alt></td>
         </tr>
 
         <?php
