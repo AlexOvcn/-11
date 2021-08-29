@@ -57,8 +57,7 @@ email varchar(128),
 discount int,
 role_id int,
 foreign key(role_id) references roles(id) on delete cascade,
-avatar mediumblob,
-comment_id int) default charset="utf8"';
+avatar mediumblob) default charset="utf8"';
 
 // Запрос для создания таблицы "Comments"
 $comments = 'CREATE table comments(
@@ -71,14 +70,11 @@ foreign key(hotel_id) references hotels(id) on delete cascade,
 sending_time DATETIME not null,
 comments varchar(1024) not null) default charset="utf8"';
 
-// Запрос для связи users(comment_id) с comments(id)
-$usersCommentId_commentsId = 'ALTER TABLE `users` ADD FOREIGN KEY (`comment_id`) REFERENCES `comments`(`id`) ON DELETE CASCADE';
-
 // Запрос на первоначальное заполнение таблицы roles
 $insertIntoRoles = 'INSERT INTO `roles` (`id`, `role`) VALUES ("1", "admin"), ("2", "user")';
 
 // Создаем массив запросов
-$queries = array($db__site_2, $db__site_2USE, $countries, $cities, $hotels, $images, $roles, $users, $comments, $usersCommentId_commentsId, $insertIntoRoles);
+$queries = array($db__site_2, $db__site_2USE, $countries, $cities, $hotels, $images, $roles, $users, $comments, $insertIntoRoles);
 foreach ($queries as $key => $query) {
     $connect->query($query);
     $err = mysqli_connect_errno();
