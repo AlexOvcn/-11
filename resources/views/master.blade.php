@@ -12,7 +12,9 @@
     <script>
         function inputRestriction(maxValue, thisInput) {
             let minValue = 2;
-            thisInput.value = thisInput.value.trim();
+            if (thisInput.value.match(/\s{2,}/)) {
+                thisInput.value = thisInput.value.trim()+' ';
+            }
             if (maxValue < thisInput.value.length || minValue > thisInput.value.length) {
                 thisInput.value = thisInput.value.slice(0, maxValue);
                 if (!thisInput.classList.contains('redInput')) {
