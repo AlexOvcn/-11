@@ -12,9 +12,15 @@
     <script>
         function inputRestriction(maxValue, thisInput) {
             let minValue = 2;
-            if (thisInput.value.match(/\s{2,}/)) {
-                thisInput.value = thisInput.value.trim()+' ';
+            if (source = thisInput.value.match(/\s{2,}/)) {
+                let index = source.index;
+                thisInput.value = thisInput.value.slice(0, index)+' '+thisInput.value.slice(index+source[0].length, thisInput.value.length);
+                // берем весь текст до совпадения + пробел + последующий текст вычитая длину найденного совпадения (например если скопировать много пробелов, и вставить в середину написанного текста)
+            } else if (source = thisInput.value.match(/[\n+\r+]/)) {
+                thisInput.value = thisInput.value.slice(0, source.index)+' ';
+                // исключаем из полей перенос строки, но удаляем все последующее
             }
+            // подсвечиваем поля, если они не проходят проверку длины
             if (maxValue < thisInput.value.length || minValue > thisInput.value.length) {
                 thisInput.value = thisInput.value.slice(0, maxValue);
                 if (!thisInput.classList.contains('redInput')) {
