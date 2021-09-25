@@ -1,0 +1,144 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 50PX;
+    min-height: 100vh;
+    background-image: url('../img/BG.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+::placeholder {
+    color: rgba(0, 0, 0, 0.233);
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 70px;
+    overflow: hidden;
+}
+
+.mainLink {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 40px;
+    text-decoration: none;
+    color: gold;
+    font-weight: 600;
+    text-shadow: 0 0 9px rgb(0, 0, 0);
+    transition: 0.2s;
+}
+.mainLink:hover {
+    color: rgb(223, 219, 0);
+    transform: scale(1.1,1.1);
+}
+.mainLinkActive {
+    color: rgb(190, 223, 0);
+}
+
+.buttonAddCar {
+    display: inline-block;
+    background-color: #2da368;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: 0.7s;
+    border: 1px solid #2da368;
+    cursor: pointer;
+}
+.buttonAddCar:hover {
+    background-color: #abf7d1;
+    color: black;
+}
+
+.currentPage {
+    color: dimgrey;
+    margin-bottom: 20px;
+}
+
+.input {
+    margin-top: 10px;
+    display: block;
+    width: 40%;
+    padding: 5px 10px;
+    border: 1px solid rgb(85, 85, 0);
+    outline: none;
+    border-radius: 3px;
+    transition: 0.6s;
+}
+.input:focus {
+    border: 1px solid rgb(177, 177, 0);
+}
+
+.inputName {
+    display: block;
+    margin-top: 15px;
+}
+
+.flex-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button-show {
+    color: #3399FF;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    transition: 0.4s;
+}
+.button-show:hover {
+    text-decoration: underline;
+    color: #0033FF;
+}
+
+.button-edit {
+    padding: 7px 35px;
+    background-color: #2E8B57;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+.button-edit:hover {
+    border: 1px solid green;
+    color: green;
+    background-color: white;
+}
+
+.button-delete {
+    font-weight: 600;
+    padding: 7px 35px;
+    cursor: pointer;
+    color: #DC143C;
+    background-color: white;
+    border: 1px solid #DC143C;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+.button-delete:hover {
+    border: 1px solid white;
+    color: white;
+    background-color: red;
+}
+
+.separator {
+    font-size: 25px;
+    font-weight: 900;
+    color: rgba(143, 0, 0, 0.719);
+    margin: 0 5px;
+}
