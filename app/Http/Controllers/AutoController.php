@@ -84,7 +84,7 @@ class AutoController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|unique:auto,id,' . Auto::find($id)->id
+            'name' => 'required|unique:auto,name,' . Auto::find($id)->id
         ]);
 
         if ($request->image_path === null) {
