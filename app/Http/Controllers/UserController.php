@@ -1,0 +1,86 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use App\Rules\ConfirmPassword;
+use Illuminate\Support\Str;
+
+class UserController extends Controller
+{
+    public function registerForm()
+    {
+        return view('auth.register', [
+            'page' => 'Регистрация'
+        ]);
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6',
+            'confirm_password' => ['required', new ConfirmPassword($request->password)],
+            'avatar' => 'max:600'   // в килобайтах
+        ]); // добавление собственного правила ConfirmPassword проверяющий значение с полем password
+
+        if ($request->avatar === null) {
+            $avatar = 'assets/img/auto_notFound.jpg';
+        } else {
+            $avatar = self::saveImage($request->avatar);
+        }
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'avatar' => $avatar
+        ]);
+
+        return redirect()->route('auth.loginForm');
+    }
+
+    public function loginForm()
+    {
+        return view('auth.login', [
+            'page' => 'Авторизация'
+        ]);
+    }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'name' => 'required',
+            'password' => 'required'
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->route('cars.index');
+        }
+
+        return back()->withErrors([
+            'loginFail' => 'Проверьте правильность введенных данных'
+        ]);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return back();
+    }
+    static function saveImage($file)
+    {
+        if (! $file) { return; }
+
+        $ext = $file->extension();
+        $filename = Str::random(6) . '.' . $ext;
+
+        return $file->storeAs('images', $filename, 'uploads');
+    }
+}
