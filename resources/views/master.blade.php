@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('page')</title>
     <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+    <link rel="shortcut icon" href="{{asset('favicon.ico')}}">
 </head>
 <body>
     <header>

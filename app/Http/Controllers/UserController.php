@@ -22,13 +22,13 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
-            'confirm_password' => ['required', new ConfirmPassword($request->password)],
+            'pass' => 'required|min:6',
+            'confirm_password' => ['required', new ConfirmPassword($request->pass)],
             'avatar' => 'max:600'   // в килобайтах
         ]); // добавление собственного правила ConfirmPassword проверяющий значение с полем password
 
         if ($request->avatar === null) {
-            $avatar = 'assets/img/auto_notFound.jpg';
+            $avatar = 'assets/img/hasNotAvatar.jpg';
         } else {
             $avatar = self::saveImage($request->avatar);
         }
@@ -36,7 +36,7 @@ class UserController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => bcrypt($request->password),
+            'password' => bcrypt($request->pass),
             'avatar' => $avatar
         ]);
 
