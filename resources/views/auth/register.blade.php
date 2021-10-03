@@ -24,9 +24,8 @@
         </label>
         <label class="inputName">
             <span>*Пароль:</span>
-            <input type="password" class="input" name="password" value="{{old('password')}}">
-            {{$errors->login->first('email')}}
-            @error('password')
+            <input type="password" class="input" name="pass" value="{{old('pass')}}">
+            @error('pass')
                 <span style="color:red">{{ $message }}</span>
             @enderror
         </label>

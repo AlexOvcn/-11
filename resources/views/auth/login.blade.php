@@ -10,14 +10,14 @@
 
         <label class="inputName">
             <span>Логин:</span>
-            <input type="text" class="input" name="name" value="{{old('name')}}">
+            <input type="text" class="input" name="name">
             @error('name')
                 <span style="color:red">{{ $message }}</span>
             @enderror
         </label>
         <label class="inputName">
             <span>Пароль:</span>
-            <input type="password" class="input" name="password" value="{{old('password')}}">
+            <input type="password" class="input" name="password">
             @error('password')
                 <span style="color:red">{{ $message }}</span>
             @enderror
