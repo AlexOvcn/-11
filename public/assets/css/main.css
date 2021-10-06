@@ -1,0 +1,314 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background-image: url('../img/BG.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+::placeholder {
+    color: rgba(0, 0, 0, 0.233);
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+    padding: 0 10px;
+    margin-bottom: 70px;
+    overflow: hidden;
+}
+header {
+    margin-bottom: 50px;
+    padding: 7px 5%;
+    background-color: rgb(110, 190, 125);
+    box-shadow: 0 0 15px 20px rgba(0, 0, 0, 0.151);
+    display: flex;
+    justify-content: space-between;
+}
+.nav {
+    margin-left: 40px;
+    padding-top: 15px;
+}
+.nav > li {
+    list-style: none;
+}
+.nav a {
+    text-decoration: none;
+    font-size: 19px;
+    color: rgb(239, 255, 239);
+    text-shadow: 0 0 1px rgb(0, 0, 0);
+    transition: 0.3s;
+}
+.nav a:hover {
+    color: rgb(239, 255, 239);
+    text-shadow: 0 0 10px white;
+}
+.welcome {
+    margin-right: 10px;
+    color: rgb(239, 255, 239);
+    font-size: 18px;
+    font-weight: 600;
+}
+.userAvatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 23px;
+    margin-right: 20px;
+}
+.btn {
+    padding: 3px 6px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.486);
+    margin: 0 4px;
+    font-weight: 600;
+    border: 1px solid black;
+    transition: 0.2s;
+}
+.btn:hover {
+    transform: scale(0.97,0.96);
+    box-shadow: 0px 0px 0 rgba(0, 0, 0, 0.445);
+}
+
+.btn-logout {
+    background-color: #FFCCCC;
+    color: rgb(77, 0, 0);
+}
+
+.btn-login {
+    background-color: #CCFFCC;
+    color: rgb(0, 77, 13);
+}
+
+.btn-register {
+    background-color: #CCFFFF;
+    color: rgb(0, 62, 90);
+}
+
+.mainLink {
+    text-align: center;
+    font-size: 40px;
+    text-decoration: none;
+    color: gold;
+    font-weight: 600;
+    text-shadow: 0 0 3px rgb(0, 0, 0);
+    transition: 0.2s;
+}
+.mainLink:hover {
+    color: rgb(223, 219, 0);
+    transform: scale(1.1,1.1);
+}
+.mainLinkActive {
+    color: rgb(190, 223, 0);
+}
+
+.buttonAdd {
+    display: inline-block;
+    background-color: #2da368;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: 0.7s;
+    border: 1px solid #2da368;
+    cursor: pointer;
+    margin: 30px 0;
+}
+.buttonAdd:hover {
+    background-color: #abf7d1;
+    color: black;
+}
+
+.currentPage {
+    color: dimgrey;
+    margin-bottom: 20px;
+}
+
+.input {
+    margin-top: 10px;
+    display: block;
+    width: 40%;
+    padding: 5px 10px;
+    border: 1px solid rgb(85, 85, 0);
+    outline: none;
+    border-radius: 3px;
+    transition: 0.6s;
+}
+.input:focus {
+    border: 1px solid rgb(177, 177, 0);
+}
+
+.inputName {
+    display: block;
+    margin-top: 15px;
+}
+
+.flex-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.button-show {
+    color: #3399FF;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    transition: 0.4s;
+}
+.button-show:hover {
+    text-decoration: underline;
+    color: #0033FF;
+}
+
+.button-edit {
+    padding: 7px 35px;
+    background-color: #2E8B57;
+    color: white;
+    font-family: inherit;
+    text-decoration: none;
+    line-height: 15px;
+    border: 1px solid white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+.button-edit:hover {
+    border: 1px solid green;
+    color: green;
+    background-color: white;
+}
+
+.button-delete {
+    font-weight: 600;
+    padding: 7px 35px;
+    cursor: pointer;
+    font-family: inherit;
+    line-height: 15px;
+    color: #DC143C;
+    background-color: white;
+    border: 1px solid #DC143C;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+.button-delete:hover {
+    border: 1px solid white;
+    color: white;
+    background-color: red;
+}
+
+.separator {
+    font-size: 25px;
+    font-weight: 900;
+    color: rgba(143, 0, 0, 0.719);
+    margin: 0 5px;
+}
+
+.admin-title {
+    margin-bottom: 20px;
+    color: rgb(0, 66, 9);
+    font-size: 21px;
+}
+
+.admin-allRolesShow > div{
+    display: block;
+    margin: 0 auto;
+}
+.admin-allRolesShow > li {
+    margin-left: 50px;
+    font-size: 18px;
+    color: rgb(0, 59, 0);
+}
+.admin-allRolesShow > p{
+    text-align: center;
+    font-size: 18px;
+    color: rgb(65, 0, 0);
+}
+
+.admin-select {
+    outline: none;
+    border: 1px solid rgb(0, 119, 16);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+.admin-formSelect_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.admin-formSelect_flex > select {
+    margin-right: 10px;
+}
+.admin-blockWithSelectElements > form:not(:first-child) {
+    margin-top: 15px;
+}
+
+/* Прелоадер */
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: green;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
