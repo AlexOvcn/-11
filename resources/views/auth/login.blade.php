@@ -5,7 +5,7 @@
 @section('title', $page)
 
 @section('content')
-    <form action="{{route('auth.login')}}" method="POST"">
+    <form action="{{route('auth.login')}}" method="POST">
         @csrf
 
         <label class="inputName">

@@ -14,7 +14,9 @@
         <div class="flex-block">
             <a class="mainLink {{($page === 'Все записи автомобилей') ? 'mainLinkActive' : null}}" href="{{route('cars.index')}}">Все машинки</a>
             <ul class="nav">
-                <li><a href="{{route('admin.index')}}">Консоль администратора</a></li>
+                @admin
+                    <li><a href="{{route('admin.index')}}">Консоль администратора</a></li>
+                @endadmin
             </ul>
         </div>
 

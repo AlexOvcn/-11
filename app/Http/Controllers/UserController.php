@@ -77,7 +77,7 @@ class UserController extends Controller
     {
         Auth::logout();
 
-        return back();
+        return redirect()->route('cars.index');
     }
     static function saveImage($file)
     {

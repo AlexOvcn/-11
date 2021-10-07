@@ -29,17 +29,22 @@ Route::get('auth/register', [UserController::class, 'registerForm'])->name('auth
 Route::post('auth/register', [UserController::class, 'register'])->name('auth.register');
 Route::get('auth/logout', [UserController::class, 'logout'])->name('auth.logout');
 
-Route::get('admin/index', [Role_userController::class, 'index'])->name('admin.index');
 
-Route::post('admin/ajax-getRoles', [Role_userController::class, 'ajaxGetRoles'])->name('admin.ajax-getRoles');
+Route::middleware(['admin', 'auth'])->prefix('admin')->group(function() {
 
-Route::post('admin/ajax-getRolesForActionDeleteOneRole', [Role_userController::class, 'ajaxGetRolesForActionDeleteOneRole'])->name('admin.ajax-getRolesForActionDeleteOneRole');
+    Route::get('/index', [Role_userController::class, 'index'])->name('admin.index');
 
-Route::post('admin/ajax-getRolesForActionAddOneRole', [Role_userController::class, 'ajaxGetRolesForActionAddOneRole'])->name('admin.ajax-getRolesForActionAddOneRole');
+	Route::post('/ajax-getRoles', [Role_userController::class, 'ajaxGetRoles'])->name('admin.ajax-getRoles');
 
-Route::delete('admin/ajax-detachOneRole', [Role_userController::class, 'ajaxDetachOneRole'])->name('admin.ajax-detachOneRole');
+    Route::post('/ajax-getRolesForActionDeleteOneRole', [Role_userController::class, 'ajaxGetRolesForActionDeleteOneRole'])->name('admin.ajax-getRolesForActionDeleteOneRole');
 
-Route::post('admin/ajax-attachOneRole', [Role_userController::class, 'ajaxAttachOneRole'])->name('admin.ajax-attachOneRole');
+    Route::post('/ajax-getRolesForActionAddOneRole', [Role_userController::class, 'ajaxGetRolesForActionAddOneRole'])->name('admin.ajax-getRolesForActionAddOneRole');
+
+    Route::delete('/ajax-detachOneRole', [Role_userController::class, 'ajaxDetachOneRole'])->name('admin.ajax-detachOneRole');
+
+    Route::post('/ajax-attachOneRole', [Role_userController::class, 'ajaxAttachOneRole'])->name('admin.ajax-attachOneRole');
+
+});
 
 
 
