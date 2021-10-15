@@ -51,11 +51,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class, 'role_user', 'user_id', 'role_id');
     }
 
-    static function hasRole($role) :bool
+    static function hasRole($user, $role) :bool
     {
         $hasRole = self::whereHas('roles', function (Builder $query) use($role) {
             $query->where('role', $role);
-        })->first();
+        })->where('name', $user->name)->first();
+
+        // dd($hasRole);
         return $hasRole !== null ? true : false;
     }
 }

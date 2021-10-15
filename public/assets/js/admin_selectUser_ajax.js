@@ -29,7 +29,7 @@ function admin_selectUser_ajax(user_email) {
 
     // for (key of params.keys()) {
     //     console.log(`${key}: ${params.get(key)}`);
-    // }
+    // } // позволяет посмотреть все ключи обьекта FormData
 
     // все роли пользователя
     fetch('http://127.0.0.1:8000/admin/ajax-getRoles', {
