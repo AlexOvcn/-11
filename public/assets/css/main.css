@@ -1,0 +1,895 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+    width: calc(100% - 8px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background-color: rgb(48, 48, 48);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+header {
+    z-index: 5;
+    width: 100%;
+    position: fixed;
+    padding: 7px 5%;
+    background-color: black;
+    box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.555);
+    display: flex;
+    border-bottom: 1px solid rgba(255, 217, 0, 0.267);
+    justify-content: space-between;
+}
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 8px; /* ширина для вертикального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+    background-color: #464646;
+    transition: 0.5s;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 187, 0);
+    border-radius: 9em;
+    box-shadow: inset 1px 1px 5px #f3faf7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(201, 147, 0);;
+}
+::placeholder {
+    color: rgba(0, 0, 0, 0.233);
+}
+::selection {
+    color: goldenrod; /* Цвет текста */
+    background: #000; /* Цвет фона */
+}
+.container {
+    margin: 0 auto;
+    width: 90%;
+    padding: 0 20px 30px;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+.gridContainer {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 17.44% 17.44% 17.44% 17.44% 17.44% ;
+    column-gap: 3.2%;
+}
+.grid-item {
+    height: 227px;
+    position: relative;
+    margin-bottom: 50px;
+    overflow: hidden;
+    background-position: center center;
+    background-color: rgb(87, 87, 87);
+    background-size: cover;
+    color: rgba(73, 73, 73, 0.274);
+    border-radius: 15px;
+    box-shadow: inset 0 0 35px 17px rgba(0, 0, 0, 0.253), 0 10px 15px 1px rgba(73, 73, 73, 0.274);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.grid-item__inGallery:hover {
+    transform: scale(1.03,1.03);
+    box-shadow: inset 0 0 25px 15px rgba(0, 0, 0, 0.164), 0 10px 15px 1px rgba(0, 0, 0, 0.164);
+}
+.grid-item__outOfGallery {
+    border: 1px solid rgba(218, 165, 32, 0.308);
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+}
+.grid-item__inGallery::before {
+    content: '';
+    display: block;
+    width: 100%;
+    background: linear-gradient( 0deg, black 0%, black 20%, transparent 100% );
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+}
+.userAvatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 23px;
+    margin-right: 20px;
+}
+.welcome {
+    margin-right: 10px;
+    color: rgb(255, 254, 239);
+    font-size: 18px;
+    font-weight: 600;
+}
+.album-title {
+    font-size: 19px;
+    color: rgb(255, 241, 181);
+}
+.album-title__inCover {
+    position: relative;
+    text-align: center;
+    margin-top: 150px;
+}
+.album-artist {
+    font-size: 16px;
+    color: white;
+}
+.album-artist__inCover {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+}
+.flex-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mainLink {
+    text-align: center;
+    font-size: 35px;
+    text-decoration: none;
+    color: goldenrod;
+    font-weight: 600;
+    text-shadow: 0 0 3px rgb(0, 0, 0);
+    transition: 0.2s;
+}
+.mainLink:hover {
+    color: gold;
+    text-shadow: 0 0 15px rgb(170, 167, 0);
+}
+.currentPage {
+    /* +50px */
+    margin-top: 114px;
+    margin-bottom: 30px;
+    color: antiquewhite;
+}
+.nav {
+    display: flex;
+    margin-left: 40px;
+    padding-top: 10px;
+}
+.nav > li {
+    list-style: none;
+}
+.nav > li:not(:first-child) {
+    margin-left: 20px;
+}
+.nav a {
+    text-decoration: none;
+    font-size: 17px;
+    color: rgb(255, 255, 189);
+    text-shadow: 0 0 1px rgb(0, 0, 0);
+    transition: 0.3s;
+}
+.nav a:hover {
+    color: rgb(255, 255, 248);
+    text-shadow: 0 0 15px white;
+}
+.album-otherInfo {
+    font-size: 15px;
+    margin-top: 5px;
+    color: rgba(255, 255, 255, 0.747);
+}
+.album-descriptionBlock {
+    height: 100%;
+    flex-grow: 1;
+    margin-left: 50px;
+}
+.album-songBlock {
+    padding: 5px 2px 7px;
+    border-radius: 2px;
+    border-bottom: 1px solid rgba(255, 217, 0, 0.37);
+}
+.album-songBlock p:not(:first-child) {
+    margin-left: 20px;
+}
+.album-search {
+    outline: none;
+    margin-top: 114px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    width: 250px;
+    transition: 0.5s;
+    box-shadow: 0 0 15px 1px rgba(145, 137, 101, 0.452);
+    border-radius: 3px;
+    border: 1px solid gold;
+    background-color: rgb(219, 219, 219);
+    padding: 5px 10px;
+}
+.album-search:focus {
+    box-shadow: 0 0 15px 1px rgba(255, 208, 0, 0.452);
+}
+
+.song-item {
+    color: rgb(255, 238, 151);
+}
+.song-item:first-child {
+    margin-left: 5px;
+    font-weight: 900;
+}
+.song-showTextOfSong {
+    color: rgb(255, 227, 88);
+    cursor: pointer;
+}
+.song-showTextOfSongAnim {
+    animation: song-showTextOfSongAnim 0.5s forwards;
+}
+@keyframes song-showTextOfSongAnim {
+    from {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.songText {
+    color: rgba(255, 255, 255, 0.795);
+    width: 100%;
+    overflow-y: scroll;
+    transition: 1.5s;
+}
+.songText-hidden {
+    padding: 0;
+    height: auto;
+    max-height: 0px;
+    border-bottom: 1px solid rgba(255, 217, 0, 0);
+}
+.songText-show {
+    padding: 5px 0 7px;
+    max-height: 200px;
+    border-bottom: 1px solid rgba(255, 217, 0, 0.37);
+}
+
+.commentsBlock {
+    border: 1px solid goldenrod;
+    border-radius: 8px;
+    box-shadow: inset 0 0 25px 15px rgba(0, 0, 0, 0.185), 0 10px 15px 1px rgba(85, 85, 85, 0.164);
+    margin-top: 60px;
+    min-height: 150px;
+    background-color: rgb(95, 95, 95);
+}
+.commentsBlock > div:not(:first-child) {
+    margin-top: 20px;
+}
+.comment {
+    display: flex;
+    min-height: 200px;
+    padding: 20px;
+}
+.comment-hasNotComments {
+    color: rgb(255, 223, 163);
+    display: inline-block;
+    width: 100%;
+    margin-top: 60px;
+    text-align: center;
+}
+.comment-info {
+    flex-shrink: 0;
+    padding-bottom: 10px;
+    margin-right: 15px;
+    width: 120px;
+}
+.comment-info__username {
+    margin: 0 0 3px;
+    color: white;
+    font-size: 14px;
+}
+.comment-info__status {
+    margin: 0 0 3px;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+}
+.comment-info__status > span {
+    text-shadow: 0 0 1px rgb(155, 126, 0);
+}
+.comment-info span {
+    opacity: 0.7;
+    font-size: 12px;
+}
+.comment-info__avatar {
+    background-image: url('../source/avatar.png');
+    background-size: cover;
+    background-position: center center;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    width: 110px;
+    height: 110px;
+}
+.comment-info__sendingTime {
+    color: rgba(255, 255, 255, 0.822);
+    font-size: 13px;
+}
+.comment-textField {
+    box-shadow: inset 0 0 25px 15px rgba(255, 255, 255, 0.726), 0 10px 15px 1px rgba(238, 238, 238, 0.178);
+    border-radius: 3px;
+    border: 1px solid gold;
+    background-color: rgb(219, 219, 219);
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+}
+.comment-textField__text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+}
+.textArea {
+    outline: none;
+    min-height: 150px;
+    resize: vertical;
+    transition: 0.5s;
+    box-shadow: 0 0 15px 1px rgba(145, 137, 101, 0.452);
+}
+.textArea:focus {
+    box-shadow: 0 0 15px 1px rgba(255, 208, 0, 0.452);
+}
+.comment-hasNotLogin {
+    text-align: center;
+    margin-top: 35px;
+    color: rgb(71, 0, 0);
+}
+
+.btn {
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    background-color: rgb(34, 34, 34);
+    border: 1px solid goldenrod;
+    padding: 5px 10px;
+    transition: 0.5s;
+}
+.btn:hover {
+    box-shadow: 0 0 15px 1px rgba(255, 208, 0, 0.521);
+}
+.btn-add {
+    color: rgb(120, 180, 0);
+}
+.btn-addBig {
+    display: inline-block;
+    line-height: 20px;
+    color: rgb(120, 180, 0);
+    font-size: 18px;
+    padding: 8px 16px;
+    height: 38.8px;
+}
+.btn-add:hover, .btn-addBig:hover {
+    color: rgb(120, 180, 0);
+    text-shadow: 0 0 20px rgb(120, 180, 0);
+}
+.btn-logout {
+    color: rgba(255, 0, 0, 0.541);
+}
+.btn-logout:hover {
+    color: red;
+    text-shadow: 0 0 20px red;
+}
+.btn-login {
+    color: rgba(0, 255, 64, 0.541);
+}
+.btn-login:hover {
+    color: rgb(0, 255, 64);
+    text-shadow: 0 0 20px rgb(0, 255, 64);
+}
+.btn-register {
+    margin-left: 12px;
+    color: rgba(0, 247, 255, 0.692);
+}
+.btn-register:hover {
+    color: rgb(0, 247, 255);
+    text-shadow: 0 0 20px rgb(0, 247, 255);
+}
+.floatRight {
+    float: right;
+}
+.inputName {
+    display: block;
+    margin-top: 20px;
+}
+.inputName > span {
+    color: goldenrod;
+    display: block;
+    margin-bottom: 7px;
+}
+.input {
+    padding: 8px 16px;
+    width: 600px;
+    font-size: 18px;
+    outline: none;
+    box-shadow: inset 0 0 5px 2px rgba(255, 255, 255, 0.726), 0 0 0 0 rgba(238, 238, 238, 0.651);
+    border-radius: 3px;
+    border: 1px solid gold;
+    background-color: rgb(219, 219, 219);
+    transition: 0.5s;
+}
+.input:focus {
+    box-shadow: inset 0 0 8px 2px rgba(255, 255, 255, 0.726), 0 0 15px 1px rgba(238, 238, 238, 0.651);
+}
+.disabled {
+    color: rgb(0, 0, 0);
+    background: rgb(83, 83, 83);
+}
+
+.fieldOfBlockSongs {
+    padding: 15px;
+    border: 1px solid gold;
+}
+.fieldOfBlockSongs legend {
+    padding: 0 10px;
+    color: goldenrod;
+    font-size: 20px;
+}
+
+.inputTimeSeparator {
+    color: gold;
+    margin: 0 5px;
+    font-size: 20px;
+}
+.errorText {
+    color: red;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.songsList {
+    margin-top: 30px;
+}
+.songsList-songInfo {
+    justify-content: flex-start;
+    padding: 7px 0;
+}
+.songsList-title {
+    margin-bottom: 5px;
+    font-size: 17px;
+    text-align: center;
+    color: goldenrod;
+}
+.songsList-empty {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: rgb(206, 218, 32);
+}
+.song-inAddAlbum {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 170px;
+    margin-left: 11px;
+    font-size: 13px;
+}
+.down_border:not(:last-child) {
+    border-bottom: 1px solid gold;
+}
+
+.red-border {
+    border: 1px solid red;
+    box-shadow: inset 0 0 8px 2px rgba(255, 0, 0, 0.418);
+}
+.redirect {
+    color: rgb(255, 230, 0);
+    font-size: 17px;
+    margin-top: 40px;
+}
+
+.hidden {
+    opacity: 0;
+}
+.slowShow {
+    animation: ease-in-out slowShowAnim 0.2s forwards;
+}
+
+.notFoundAlbums {
+    width: 600px;
+    color: rgba(205, 92, 92, 0.623);
+}
+
+@keyframes slowShowAnim {
+    from {
+        transform: translate(-35px) rotate(-10deg);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0px) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.bannedUserInfoTitle {
+    margin-top: 20px;
+    font-size: 23px;
+    color: rgba(207, 7, 0, 0.815);
+}
+.bannedUserInfo {
+    margin-top: 25px;
+    margin-left: 40px;
+    color: rgba(255, 0, 0, 0.623);
+}
+.bannedUserInfo li {
+    margin-top: 10px;
+}
+.separatorLogin {
+    margin-top: 50px;
+    border: 0;
+    height: 2px;
+    width: 45%;
+    background-color: rgba(197, 0, 0, 0.233);
+}
+.linksBlockFromAdminPanel {
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+.btn-admin {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    width: 350px;
+    height: 310px;
+    border-radius: 7px;
+    padding: 10px 20px;
+    text-decoration: none;
+    box-shadow: inset 0 0 60px 20px rgba(0, 0, 0, 0.733), 0 0 30px 5px rgba(0, 0, 0, 0.534);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+.btn-admin:hover {
+    transform: scale(1.1, 1.1);
+    box-shadow: inset 0 0 50px 15px rgba(0, 0, 0, 0.733), 0 0 30px 7px rgba(100, 100, 100, 0.534);
+}
+.btn-adminLeft:before {
+	content: '';
+    height: 150px;
+    width: 100%;
+    background: radial-gradient( at top, rgba(255, 217, 0, 0.473) 0%, transparent 74% );
+	position: absolute;
+	top: 0;
+    left: 0;
+}
+.btn-adminLeft {
+    border: 3px solid goldenrod;
+}
+.btn-adminLeft > p {
+    color: rgb(179, 0, 0);
+}
+.btn-adminRight:before {
+	content: '';
+    height: 150px;
+    width: 100%;
+    background: radial-gradient( at top, rgba(153, 0, 0, 0.801) 0%, transparent 74% );
+	position: absolute;
+	top: -1px;
+    left: 0;
+}
+.btn-adminRight {
+    border: 3px solid rgb(218, 32, 32);
+}
+.btn-adminRight > p {
+    color: gold;
+}
+.btn-admin > p {
+    position: relative;
+    font-weight: 700;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.603);
+    font-size: 25px;
+    text-align: center;
+}
+.darkScreenShow {
+    position: fixed;
+    width: calc(100vw - 8px);
+    height: 100vh;
+    transition: 1s;
+    top: 0;
+    left: 0;
+    animation: darkScreenShowAnim 0.3s forwards;
+}
+@keyframes darkScreenShowAnim {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: rgb(48, 48, 48);
+    }
+}
+.darkScreenHidden {
+    position: fixed;
+    z-index: 5;
+    width: calc(100vw - 8px);
+    height: 100vh;
+    transition: 1s;
+    top: 0;
+    left: 0;
+    animation: ease-in-out darkScreenHiddenAnim 0.7s forwards;
+}
+@keyframes darkScreenHiddenAnim {
+    from {
+        background-color: rgb(48, 48, 48);
+    }
+    to {
+        z-index: -1;
+        background-color: transparent;
+    }
+}
+.collectionAlbums-empty {
+    width: 200px;
+    font-size: 20px;
+    color: rgba(255, 251, 246, 0.815);
+    text-shadow: 0 0 10px white;
+}
+.linksBlockFromAdminPanel-album {
+    display: inline-block;
+    height: 150px;
+    background-color: rgb(87, 86, 78);
+    width: 100%;
+    margin-top: 100px;
+    border: 1px solid gold;
+    border-radius: 6px;
+}
+.linksBlockFromAdminPanel-album__title {
+    text-align: center;
+    font-size: 27px;
+    color: rgb(247, 198, 109);
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.confirmation-btn {
+    color: rgba(0, 255, 64, 0.541);
+}
+.confirmation-btn:hover {
+    color: rgb(0, 255, 64);
+    text-shadow: 0 0 20px rgb(0, 255, 64);
+}
+.cancel-btn {
+    color: rgba(255, 0, 0, 0.623);
+}
+.cancel-btn:hover {
+    color: red;
+    text-shadow: 0 0 20px red;
+}
+.commentBlockFromAdmin {
+    padding: 15px 0;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 60px;
+    background-color: rgb(94, 94, 94);
+    border-radius: 10px;
+    border: 1px solid gold;
+}
+.comment-notConfirmed {
+    border-radius: 8px;
+    animation: comment-notConfirmedAnim 5s infinite;
+}
+@keyframes comment-notConfirmedAnim {
+    from {
+        box-shadow: 0 0 15px 5px rgb(255, 114, 114);
+        border: 1px solid red;
+    }
+    50% {
+        box-shadow: 0 0 15px 5px rgb(255, 241, 114);
+        border: 1px solid rgb(255, 238, 0);
+    }
+    to {
+        box-shadow: 0 0 15px 5px rgb(255, 114, 114);
+        border: 1px solid red;
+    }
+}
+.btnBlockFromAdmin {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 227px;
+    margin-left: 30px;
+}
+.btnBlockFromAdmin a {
+    width: 95px;
+    text-align: center;
+}
+.slowHidden-commentBlockFromAdminConf {
+    height: auto;
+    border: 1px solid green;
+    box-shadow: inset 0 0 40px 15px rgba(0, 128, 0, 0.4);
+    transition: 0.2s;
+    animation: ease-in-out slowHidden-commentBlockFromAdminAnim 1.2s forwards;
+}
+.slowHidden-commentBlockFromAdminCanc {
+    height: auto;
+    border: 1px solid red;
+    box-shadow: inset 0 0 40px 15px rgba(128, 0, 0, 0.4);
+    transition: 0.2s;
+    animation: ease-in-out slowHidden-commentBlockFromAdminAnim 1.2s forwards;
+}
+@keyframes slowHidden-commentBlockFromAdminAnim {
+    from {
+        opacity: 1;
+        transform: scale(1,1);
+    }
+    50% {
+        opacity: 0.8;
+        max-height: 259px;
+        margin-top: 60px;
+    }
+    90% {
+        padding: 15px 0;
+        opacity: 0.05;
+        padding: 0;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.1,0.1);
+        max-height: 0;
+        margin-top: -30px;
+    }
+}
+
+.commentBlockFromAdmin-notHas {
+    color: rgba(144, 238, 144, 0.829);
+    font-size: 18px;
+    margin-left: 10px;
+}
+.activeBtn {
+    transition: 0.2s;
+    transform: scale(0.90,0.90);
+    box-shadow: 0 0 15px 1px rgba(255, 208, 0, 0.521);
+}
+
+.admin-subtitle {
+    margin-left: 10px;
+    font-size: 19px;
+    color: rgb(238, 221, 144);
+}
+.userPasportTable {
+    border: 1px solid gold;
+    border-radius: 8px;
+    background-color: rgb(68, 65, 56);
+    padding: 10px;
+}
+
+
+.titleFromUserControl {
+    color: goldenrod;
+    margin-bottom: 30px;
+}
+.userPasportTable_text {
+    color: gold;
+}
+.userPasportTable_text span {
+    color: rgb(255, 247, 204);
+}
+.userPasportTable_avatar {
+    margin: 20px auto;
+    border: 2px solid gold;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 20%;
+    width: 110px;
+    height: 110px;
+}
+
+.notActiveUserInfo {
+    animation: ease-in-out notActiveUserInfoAnim 1s forwards;
+}
+@keyframes notActiveUserInfoAnim {
+    from {
+        max-height: 332px;
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(30px);
+        opacity: 0;
+        max-height: 0;
+    }
+}
+.activeUserInfo {
+    animation: ease-in-out activeUserInfoAnim 1s forwards;
+}
+@keyframes activeUserInfoAnim {
+    from {
+        max-height: 0;
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        max-height: 332px;
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+.hidden-userInfo {
+    opacity: 0;
+    max-height: 0;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+.ml-30 {
+    margin-left: 30px;
+}
+.btn-startClick {
+    transform: scale(0.94,0.94);
+}
+.btn-endClick {
+    transform: scale(1,1);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Прелоадер */
+
+.lds-ellipsis {
+    display: inline-block;
+    transform: scale(2,2);
+    margin: 72px 0 0 100px;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: goldenrod;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
