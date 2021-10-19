@@ -198,6 +198,7 @@ class UserController extends Controller
                             ->orWhere('id', $comment_id)
                             ->get()
                             ->load('user');
+                            dd($comments);
         $commentsEmpty = count($comments) !== 0 ? false : true;
         $user = Auth::user();
 

@@ -214,6 +214,7 @@ if(formAddAlbum !== null) {
             }
         }
 
+        // создание альбома
         let params = new FormData(form);
         params.set('songs_array', songsArray);
 
@@ -314,6 +315,9 @@ function getAlbums(input) {
                 setTimeout(()=> {
                     albumItem[i].classList.remove('hidden');
                     albumItem[i].classList.add('slowShow');
+                    setTimeout(()=> {
+                        albumItem[i].classList.remove('slowShow');
+                    }, 220);
                 }, i * 100);
             }
         })

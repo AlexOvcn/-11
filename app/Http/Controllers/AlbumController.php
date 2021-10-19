@@ -123,7 +123,7 @@ class AlbumController extends Controller
             ]); // в отличии от других методов insert() просто возвращает true или false. Его преимущество — в том, что можно вставить несколько записей за раз
 
             // находим id всех добавленных песен
-            $songsId = Song::whereIn('song_name', $arraySongNames)->pluck('id')->first();        // whereIn() находит все строки по значениям переданные в массиве (2ой аргумент) ища в колонке song_name, а pluck() группирует значения всех строк из колонки id в один массив
+            $songsId = Song::whereIn('song_name', $arraySongNames)->pluck('id');        // whereIn() находит все строки по значениям переданные в массиве (2ой аргумент) ища в колонке song_name, а pluck() группирует значения всех строк из колонки id в один массив
 
             // связываем песни с альбомом используя промеж. таблицу
             Album::where('album_name', $request->album_name)->where('artist_id', $request->artist_id)->first()->songs()->attach($songsId);   // attach может принимать массив, все значения будут связаны с Id найденной в контексте найденного элемента
@@ -131,7 +131,7 @@ class AlbumController extends Controller
             return Response::json([
                 'unique' => true,                   // совпадений нет
                 'album_name' => $request->album_name,
-                'redirect' => route('album.index')
+                'redirect' => route('album.index'),
             ]);
         }
     }
@@ -228,9 +228,11 @@ class AlbumController extends Controller
                     ->orderBy('artists.artist_name', 'ASC')    // сортируем по имени исполн.
                     ->select('albums.*', 'artists.artist_name')     // выбираем поля которые хотим получить в контексте обьекта $albums
                     ->where('confirmed', 1)
-                    ->where('album_name', 'LIKE', "{$request->text}%")  // поиск по назв. альбома
-                    ->orWhere('artist_name', 'LIKE', "{$request->text}%")   // ИЛИ поиск по имени исполнителя
-                    ->get();
+                    ->where(function ($query) use($request) {
+                        $query->where('album_name', 'LIKE', "{$request->text}%")  // поиск по назв. альбома
+                        ->orWhere('artist_name', 'LIKE', "{$request->text}%");   // ИЛИ поиск по имени исполнителя
+                    })
+                    ->get();  // ..where "confirmed" = 1 AND ("album_name" LIKE {$request->text} OR 'artist_name' LIKE {$request->text})
 
         // передаем относительные пути
         $album_url = route('album.show', false);    // т.к. роут ожидает вторым параметром id, нужно что-то передать, при такой записи он не ругается, но и ничего не вставляет в конец url
