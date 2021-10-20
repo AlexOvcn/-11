@@ -150,8 +150,13 @@ if(formAddSong !== null) {
                     `;
                     songs_list.append(songInfo);
 
-                    let songItemArr = [];
-                    songItemArr.push(response.song_name, response.artist_id, response.song_duration, response.song_text);
+                    let songItemArr = {
+                        "song_name": response.song_name,
+                        "artist_id": response.artist_id,
+                        "song_duration": response.song_duration,
+                        "song_text": response.song_text
+                    };
+
                     songsArray.push(songItemArr);
 
                     form.song_name.value = '';
@@ -171,13 +176,19 @@ if(formAddSong !== null) {
     })
 }
 
-// прикрепление песни к альбому
+// прикрепление песен к альбому и создание альбома
 let formAddAlbum = document.querySelector('#formAddAlbum');
 
 if(formAddAlbum !== null) {
     formAddAlbum.addEventListener('submit', function (e){
         e.preventDefault();
         let form = e.target;
+        let btn = form.button;
+
+        if (btn.classList.contains('btn-endClick')) {
+            btn.classList.remove('btn-endClick');
+        }
+        btn.classList.add('btn-startClick');
 
         let errorText = document.createElement('p');
         errorText.className = "errorText";
@@ -214,9 +225,33 @@ if(formAddAlbum !== null) {
             }
         }
 
-        // создание альбома
         let params = new FormData(form);
-        params.set('songs_array', songsArray);
+
+        // сейчас songsArray представляет из себя массив (для php он является индексным массивом) со значениями в виде обьектов, но нам нужен обьект с обьектами, чтобы провести сериализацию, буду использовать Object.fromEntries, который преобразует подобное..
+        // [
+        //     ['banana', 1],
+        //     ['orange', 2],
+        //     ['meat', 4]
+        // ]
+        // в { banana: 1, orange: 2, meat: 4 }, но для начала нам нужно пройтись по каждому элементу нашего массива songsArray и преобразовать каждый элемент в [индекс, обьект], нам поможет метод массива map
+        let intermediateArray = songsArray.map((obj, index) => {
+            return [index, obj];
+        });     // то есть он создаст нов. массив в котором элементы из массива songsArray выглядят так...
+        // [
+        //     [0 , obj],
+        //     [1 , obj],
+        //     [2 , obj]    и т.д.
+        // ]                            а это то что нам и нужно чтобы исп. Object.fromEntries
+
+        let songsObj = Object.fromEntries(intermediateArray);   // теперь это обьект который выглядит так...
+        // {
+        //     0: obj,
+        //     1: obj,
+        //     2: obj       и т.д.
+        // }
+
+        songsObj = JSON.stringify(songsObj)     // сериализация обьекта js (так как FormData передает только строку)
+        params.set('songs_obj', songsObj);
 
         fetch('http://127.0.0.1:8000/album', {
             method: 'POST',
@@ -231,6 +266,12 @@ if(formAddAlbum !== null) {
                 errorText.textContent = 'Такой альбом уже существует';
 
                 if (response.unique) {
+
+                    if (btn.classList.contains('btn-startClick')) {
+                        btn.classList.remove('btn-startClick');
+                    }
+                    btn.classList.add('btn-endClick');
+
                     let albumAddedText = document.createElement('p');
                     albumAddedText.className = "albumAddedText";
                     albumAddedText.setAttribute('style', 'color:green;margin-left:20px;display:inline-block');
@@ -441,8 +482,8 @@ function actionsWithUser(action, user_id, btn) {
         method: 'GET'
     }).then(promise => {
         if (promise.ok) {
-            showInfoOfUser(user_id);
             btn.classList.add('btn-endClick');
+            showInfoOfUser(user_id);
         } else {
             console.log(`Запрос не дошел, код ошибки: ${promise.status}`);
         }

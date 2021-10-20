@@ -46,8 +46,7 @@
                 <span>Страна</span>
                 <input class="input" type="text" name="country">
             </label>
-            <button type="submit" class="btn btn-addBig" style="margin-top: 30px">Создать альбом</button>
-            {{-- <a class="btn btn-addBig" style="margin-left: 30px">Закончить добавление плейлиста</a> --}}
+            <button type="submit" name='button' class="btn btn-addBig" style="margin-top: 30px">Создать альбом</button>
         </form>
         <div>
             <div id="stack-songs"></div>

@@ -78,32 +78,16 @@ class AlbumController extends Controller
             ]);
         } else {
 
-            // подгоняем значения для запросов к БД (вся информация песен приходит в строковом формате, значения разделены запятой)
-            $song_stringSource = $request->songs_array;
-            $song_arraySource = explode(',', $song_stringSource);
-            $countIter = count($song_arraySource) / 4;
-            $song_arrayNew = [];
-            $arraySongNames = [];
-            $posName = 0;
-            $posArt = 1;
-            $posDurat = 2;
-            $posText = 3;
-            for ($i = 0; $i < $countIter; $i++) {
-                $song_arrayNew[] =  [
-                    'song_name' => $song_arraySource[$posName],
-                    'artist_id' => $song_arraySource[$posArt],
-                    'song_duration' => $song_arraySource[$posDurat],
-                    'song_text' => $song_arraySource[$posText],
-                ];
-                $arraySongNames[] = $song_arraySource[$posName];
-                $posName+=4;
-                $posArt+=4;
-                $posDurat+=4;
-                $posText+=4;
+            $songs_array = json_decode((string) $request->songs_obj, true);     // десериализация, второй аргемент указывает на то, что мы получим значение в виде массива и обьекты внутри тоже станут ассоц. массивами, без этого аргумента php создала бы обьекты с помощью stdClass и занесла все значения внутрь
+
+            $arraySongsNames = [];
+            foreach ($songs_array as $song_array) {
+                $arraySongsNames[] = $song_array['song_name'];
             }
 
-            // после перебора имеем два нужных нам массива $song_arrayNew и $arraySongNames, начнем с записи песен в таблицу songs
-            Song::insert($song_arrayNew); // insert() этот метод позволяет вставлять несколько строк значений, массив в аргументе имеет формат двумерного массива с именами ключей совпадающими с колонками в БД
+            // теперь мы имеем два нужных нам массива $songs_array и $arraySongsNames, начнем с записи песен в таблицу songs
+
+            Song::insert($songs_array); // insert() этот метод позволяет вставлять несколько строк значений, массив в аргументе имеет формат двумерного массива с именами ключей совпадающими с колонками в БД
 
             // создаем альбом
             if ($request->album_cover === null) {
@@ -123,7 +107,7 @@ class AlbumController extends Controller
             ]); // в отличии от других методов insert() просто возвращает true или false. Его преимущество — в том, что можно вставить несколько записей за раз
 
             // находим id всех добавленных песен
-            $songsId = Song::whereIn('song_name', $arraySongNames)->pluck('id');        // whereIn() находит все строки по значениям переданные в массиве (2ой аргумент) ища в колонке song_name, а pluck() группирует значения всех строк из колонки id в один массив
+            $songsId = Song::whereIn('song_name', $arraySongsNames)->pluck('id');        // whereIn() находит все строки по значениям переданные в массиве (2ой аргумент) ища в колонке song_name, а pluck() группирует значения всех строк из колонки id в один массив
 
             // связываем песни с альбомом используя промеж. таблицу
             Album::where('album_name', $request->album_name)->where('artist_id', $request->artist_id)->first()->songs()->attach($songsId);   // attach может принимать массив, все значения будут связаны с Id найденной в контексте найденного элемента
