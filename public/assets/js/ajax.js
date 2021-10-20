@@ -183,13 +183,7 @@ if(formAddAlbum !== null) {
     formAddAlbum.addEventListener('submit', function (e){
         e.preventDefault();
         let form = e.target;
-        let btn = form.button;
-
-        if (btn.classList.contains('btn-endClick')) {
-            btn.classList.remove('btn-endClick');
-        }
-        btn.classList.add('btn-startClick');
-
+      
         let errorText = document.createElement('p');
         errorText.className = "errorText";
         errorText.textContent = 'Введите всю нужную информацию*';
@@ -224,6 +218,13 @@ if(formAddAlbum !== null) {
                 elem.remove();
             }
         }
+
+        let btn = form.button;
+
+        if (btn.classList.contains('btn-endClick')) {
+            btn.classList.remove('btn-endClick');
+        }
+        btn.classList.add('btn-startClick');
 
         let params = new FormData(form);
 
