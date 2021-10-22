@@ -18,7 +18,7 @@ if (dataElem !== null) {
 function addComment(album_id) {
     let addCommentField = document.querySelector('#addCommentField');
 
-    let filteredComment = addCommentField.value.replaceAll(/[^а-яА-Яa-zA-Z0-9]/ig,"");      // заменяем все символы кроме рус. англ. и цифр на пустоту
+    let filteredComment = addCommentField.value.replaceAll(/гавно/ig,"чудесный")      // заменяем недопустимое слово на моем сайте
 
     if (filteredComment.length < 1) {
         addCommentField.style.cssText = 'border: 1px solid red; box-shadow: inset 0 0 20px 2px rgba(255, 0, 0, 0.185)';
@@ -183,13 +183,7 @@ if(formAddAlbum !== null) {
     formAddAlbum.addEventListener('submit', function (e){
         e.preventDefault();
         let form = e.target;
-        let btn = form.button;
-
-        if (btn.classList.contains('btn-endClick')) {
-            btn.classList.remove('btn-endClick');
-        }
-        btn.classList.add('btn-startClick');
-
+      
         let errorText = document.createElement('p');
         errorText.className = "errorText";
         errorText.textContent = 'Введите всю нужную информацию*';
@@ -224,6 +218,13 @@ if(formAddAlbum !== null) {
                 elem.remove();
             }
         }
+
+        let btn = form.button;
+
+        if (btn.classList.contains('btn-endClick')) {
+            btn.classList.remove('btn-endClick');
+        }
+        btn.classList.add('btn-startClick');
 
         let params = new FormData(form);
 
