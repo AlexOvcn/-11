@@ -240,6 +240,17 @@ class AlbumController extends Controller
         $ext = $file->extension();
         $filename = Str::random(3) . $albume_name . Str::random(3) . '.' . $ext;
 
-        return $file->storeAs('images', $filename, 'uploads');
+        $image = \Image::make($file);
+        $imagePath = base_path('public/uploads/images/' . $filename);
+
+        $image->resize(null, 350, function ($constraint) {     // пропорциональное изменение сторон (перв аргум ширина, второй высота) мы выбираем высоту и по ней будет делатся ресайз
+            $constraint->aspectRatio();
+        });
+
+        $image->save($imagePath);
+
+        $path = 'images/' . $filename;
+
+        return $path;
     }
 }

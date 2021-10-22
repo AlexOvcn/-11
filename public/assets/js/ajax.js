@@ -13,7 +13,6 @@ if (dataElem !== null) {
     }
 }
 
-
 // добавление коммента под альбомом
 function addComment(album_id) {
     let addCommentField = document.querySelector('#addCommentField');
@@ -183,8 +182,8 @@ if(formAddAlbum !== null) {
     formAddAlbum.addEventListener('submit', function (e){
         e.preventDefault();
         let form = e.target;
-      
         let errorText = document.createElement('p');
+
         errorText.className = "errorText";
         errorText.textContent = 'Введите всю нужную информацию*';
 
@@ -207,6 +206,22 @@ if(formAddAlbum !== null) {
         }
         if (!songsArray.length) {
             errorText.textContent = 'Закрепите хотя бы одну песню!';
+            let elem = form.querySelector('.errorText');
+            if (elem === null) {
+                form.append(errorText);
+            }
+            return;
+        } else {
+            let elem = form.querySelector('.errorText');
+            if (elem !== null) {
+                elem.remove();
+            }
+        }
+
+        let file = form.album_cover;        // проверка на тип добавляемого файла
+
+        if (!(file.files[0].type === 'image/jpeg' || file.files[0].type === 'image/png')) {
+            errorText.textContent = 'Для обложки необходим один из форматов: jpg, jpeg, png';
             let elem = form.querySelector('.errorText');
             if (elem === null) {
                 form.append(errorText);
