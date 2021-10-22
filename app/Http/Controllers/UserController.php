@@ -31,7 +31,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'pass' => 'required|min:6',
             'confirm_password' => ['required', new ConfirmPassword($request->pass)],
-            'avatar' => 'max:2000|mimes:jpeg,jpg,png'   // в килобайтах
+            'avatar' => 'max:600'   // в килобайтах
         ]); // добавление собственного правила ConfirmPassword проверяющий значение с полем password
 
         if ($request->avatar === null) {
@@ -303,17 +303,6 @@ class UserController extends Controller
         $ext = $file->extension();
         $filename = Str::random(3) . $email . Str::random(3) . '.' . $ext;
 
-        $image = \Image::make($file);
-        $imagePath = base_path('public/uploads/images/' . $filename);
-
-        $image->resize(null, 100, function ($constraint) {     // пропорциональное изменение сторон (перв аргум ширина, второй высота) мы выбираем высоту и по ней будет делатся ресайз
-            $constraint->aspectRatio();
-        });
-
-        $image->save($imagePath);
-
-        $path = 'images/' . $filename;
-
-        return $path;
+        return $file->storeAs('images', $filename, 'uploads');
     }
 }
